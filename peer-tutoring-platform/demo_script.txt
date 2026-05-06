@@ -1,0 +1,71 @@
+PEER TUTORING PLATFORM - DEMONSTRATION SCRIPT
+===============================================
+
+1. INTRODUCTION
+   - Open browser to http://localhost:3002
+   - Show Home page with features
+
+2. STUDENT FLOW
+   a. Register as Student
+      - Navigate to /register
+      - Fill in student details
+      - Submit registration
+
+   b. Login as Student
+      - Email: student1@example.com
+      - Password: Password123!
+
+   c. Student Dashboard
+      - View "My Bookings" tab
+      - View "Available Sessions" tab
+      - Book a session
+
+   d. Book from Home Page
+      - Navigate to Home
+      - Click "Book Now" on a session
+
+   e. Book from Tutors Page
+      - Navigate to Tutors
+      - Click "Book Session" on a tutor
+
+3. TUTOR FLOW
+   a. Login as Tutor
+      - Email: tutor1@example.com
+      - Password: Password123!
+
+   b. Tutor Dashboard
+      - View Overview tab with stats
+      - View Bookings tab
+      - Confirm a booking
+      - Complete a booking
+
+   c. Create Session
+      - Navigate to Create Session tab
+      - Fill session form
+      - Submit new session
+
+   d. Create Profile
+      - Navigate to Create Profile tab (if no profile)
+      - Fill profile details
+      - Submit profile
+
+4. ADMIN FLOW
+   a. Login as Admin
+      - Email: admin@peertutoring.com
+      - Password: AdminPass123!
+
+   b. Admin Dashboard
+      - View statistics
+      - View pending tutor approvals
+      - Approve/Reject tutors
+      - View all users
+      - Process payouts
+
+5. COMPLETE BOOKING WORKFLOW
+   - Student books session
+   - Tutor confirms booking
+   - Tutor completes session
+   - Student views confirmed/completed bookings
+
+6. LOGOUT
+   - Logout from each role

@@ -1,0 +1,191 @@
+{
+  "info": {
+    "name": "Peer Tutoring Marketplace API",
+    "description": "API Collection for Peer Tutoring Platform",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "Register Student",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "url": "http://localhost:8080/api/auth/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"John\",\n  \"lastName\": \"Student\",\n  \"email\": \"student@example.com\",\n  \"password\": \"password123\",\n  \"phoneNumber\": \"1234567890\",\n  \"role\": \"STUDENT\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Register Tutor",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "url": "http://localhost:8080/api/auth/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"Jane\",\n  \"lastName\": \"Tutor\",\n  \"email\": \"tutor@example.com\",\n  \"password\": \"password123\",\n  \"phoneNumber\": \"0987654321\",\n  \"role\": \"TUTOR\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "url": "http://localhost:8080/api/auth/login",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"student@example.com\",\n  \"password\": \"password123\"\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sessions",
+      "item": [
+        {
+          "name": "Get All Sessions",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:8080/api/sessions"
+          }
+        },
+        {
+          "name": "Get Available Sessions",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:8080/api/sessions/available"
+          }
+        },
+        {
+          "name": "Create Session",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Content-Type", "value": "application/json"},
+              {"key": "Authorization", "value": "Bearer YOUR_JWT_TOKEN"}
+            ],
+            "url": "http://localhost:8080/api/sessions",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Java Programming Basics\",\n  \"description\": \"Introduction to Java programming\",\n  \"subject\": \"Computer Science\",\n  \"startTime\": \"2026-05-05T10:00:00\",\n  \"endTime\": \"2026-05-05T11:00:00\",\n  \"price\": 500.00,\n  \"maxStudents\": 1,\n  \"type\": \"ONE_ON_ONE\"\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Bookings",
+      "item": [
+        {
+          "name": "Create Booking",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Content-Type", "value": "application/json"},
+              {"key": "Authorization", "value": "Bearer YOUR_JWT_TOKEN"}
+            ],
+            "url": "http://localhost:8080/api/student/bookings",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sessionId\": 1,\n  \"notes\": \"Looking forward to learning Java!\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Get My Bookings (Student)",
+          "request": {
+            "method": "GET",
+            "header": [{"key": "Authorization", "value": "Bearer YOUR_JWT_TOKEN"}],
+            "url": "http://localhost:8080/api/student/bookings"
+          }
+        },
+        {
+          "name": "Confirm Booking",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Authorization", "value": "Bearer YOUR_JWT_TOKEN"}],
+            "url": "http://localhost:8080/api/tutor/bookings/1/confirm"
+          }
+        },
+        {
+          "name": "Complete Booking",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Authorization", "value": "Bearer YOUR_JWT_TOKEN"}],
+            "url": "http://localhost:8080/api/tutor/bookings/1/complete"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Tutors",
+      "item": [
+        {
+          "name": "Get All Tutors",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:8080/api/tutors"
+          }
+        },
+        {
+          "name": "Search Tutors",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:8080/api/tutors/search?subject=Java&minRating=4.0"
+          }
+        },
+        {
+          "name": "Create Tutor Profile",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Content-Type", "value": "application/json"},
+              {"key": "Authorization", "value": "Bearer YOUR_JWT_TOKEN"}
+            ],
+            "url": "http://localhost:8080/api/tutor/profile",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"bio\": \"Experienced Java developer with 5 years of teaching experience\",\n  \"subject\": \"Computer Science\",\n  \"subjects\": [\"Java\", \"Python\", \"Data Structures\"],\n  \"hourlyRate\": 500.00,\n  \"yearsOfExperience\": 5\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Admin",
+      "item": [
+        {
+          "name": "Dashboard Stats",
+          "request": {
+            "method": "GET",
+            "header": [{"key": "Authorization", "value": "Bearer ADMIN_JWT_TOKEN"}],
+            "url": "http://localhost:8080/api/admin/dashboard"
+          }
+        },
+        {
+          "name": "Get Pending Tutors",
+          "request": {
+            "method": "GET",
+            "header": [{"key": "Authorization", "value": "Bearer ADMIN_JWT_TOKEN"}],
+            "url": "http://localhost:8080/api/admin/tutors/pending"
+          }
+        },
+        {
+          "name": "Approve Tutor",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Authorization", "value": "Bearer ADMIN_JWT_TOKEN"}],
+            "url": "http://localhost:8080/api/admin/tutors/1/approve"
+          }
+        }
+      ]
+    }
+  ]
+}

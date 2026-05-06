@@ -1,0 +1,1563 @@
+{
+  "info": {
+    "name": "Peer Tutoring Platform - Complete Test Data",
+    "description": "Comprehensive test data for all scenarios, roles, and pages",
+    "version": "1.0.0",
+    "lastUpdated": "2026-04-30"
+  },
+  "scenarios": {
+    "authentication": {
+      "name": "Authentication Scenarios",
+      "description": "Login and registration test cases",
+      "testCases": [
+        {
+          "id": "AUTH-001",
+          "name": "Student Login - Valid",
+          "description": "Successful student login",
+          "endpoint": "POST /api/auth/login",
+          "request": {
+            "email": "student1@example.com",
+            "password": "Password123!"
+          },
+          "expectedStatus": 200,
+          "expectedResponse": {
+            "token": "jwt_token_here",
+            "id": 1,
+            "email": "student1@example.com",
+            "firstName": "Alice",
+            "lastName": "Student",
+            "role": "STUDENT"
+          }
+        },
+        {
+          "id": "AUTH-002",
+          "name": "Tutor Login - Valid",
+          "description": "Successful tutor login",
+          "endpoint": "POST /api/auth/login",
+          "request": {
+            "email": "tutor1@example.com",
+            "password": "Password123!"
+          },
+          "expectedStatus": 200,
+          "expectedResponse": {
+            "token": "jwt_token_here",
+            "id": 2,
+            "email": "tutor1@example.com",
+            "firstName": "Bob",
+            "lastName": "Tutor",
+            "role": "TUTOR"
+          }
+        },
+        {
+          "id": "AUTH-003",
+          "name": "Admin Login - Valid",
+          "description": "Successful admin login",
+          "endpoint": "POST /api/auth/login",
+          "request": {
+            "email": "admin@peertutoring.com",
+            "password": "AdminPass123!"
+          },
+          "expectedStatus": 200,
+          "expectedResponse": {
+            "token": "jwt_token_here",
+            "id": 3,
+            "email": "admin@peertutoring.com",
+            "firstName": "Super",
+            "lastName": "Admin",
+            "role": "ADMIN"
+          }
+        },
+        {
+          "id": "AUTH-004",
+          "name": "Login - Invalid Password",
+          "description": "Failed login with wrong password",
+          "endpoint": "POST /api/auth/login",
+          "request": {
+            "email": "student1@example.com",
+            "password": "wrongpassword"
+          },
+          "expectedStatus": 401,
+          "expectedResponse": {
+            "message": "Invalid credentials"
+          }
+        },
+        {
+          "id": "AUTH-005",
+          "name": "Login - Non-existent User",
+          "description": "Failed login with non-existent email",
+          "endpoint": "POST /api/auth/login",
+          "request": {
+            "email": "nonexistent@example.com",
+            "password": "Password123!"
+          },
+          "expectedStatus": 401,
+          "expectedResponse": {
+            "message": "Invalid credentials"
+          }
+        },
+        {
+          "id": "AUTH-006",
+          "name": "Register - New Student",
+          "description": "Successful student registration",
+          "endpoint": "POST /api/auth/register",
+          "request": {
+            "firstName": "Charlie",
+            "lastName": "NewStudent",
+            "email": "charlie.new@example.com",
+            "password": "SecurePass456!",
+            "phoneNumber": "+1-555-0100",
+            "role": "STUDENT"
+          },
+          "expectedStatus": 200,
+          "expectedResponse": {
+            "message": "User registered successfully!"
+          }
+        },
+        {
+          "id": "AUTH-007",
+          "name": "Register - Duplicate Email",
+          "description": "Registration with existing email",
+          "endpoint": "POST /api/auth/register",
+          "request": {
+            "firstName": "Duplicate",
+            "lastName": "User",
+            "email": "student1@example.com",
+            "password": "Password123!",
+            "phoneNumber": "+1-555-0101",
+            "role": "STUDENT"
+          },
+          "expectedStatus": 400,
+          "expectedResponse": {
+            "message": "Error: Email is already in use!"
+          }
+        },
+        {
+          "id": "AUTH-008",
+          "name": "Register - New Tutor",
+          "description": "Successful tutor registration",
+          "endpoint": "POST /api/auth/register",
+          "request": {
+            "firstName": "Diana",
+            "lastName": "Educator",
+            "email": "diana.tutor@example.com",
+            "password": "TutorPass789!",
+            "phoneNumber": "+1-555-0102",
+            "role": "TUTOR"
+          },
+          "expectedStatus": 200,
+          "expectedResponse": {
+            "message": "User registered successfully!"
+          }
+        }
+      ]
+    },
+    "users": {
+      "name": "User Test Data",
+      "description": "Sample users for all roles",
+      "students": [
+        {
+          "id": 1,
+          "firstName": "Alice",
+          "lastName": "Student",
+          "email": "student1@example.com",
+          "password": "Password123!",
+          "phoneNumber": "+1-555-0001",
+          "role": "STUDENT",
+          "active": true,
+          "verified": true,
+          "createdAt": "2026-01-15T10:00:00",
+          "bookingsMade": 5,
+          "totalSpent": 2500.00
+        },
+        {
+          "id": 2,
+          "firstName": "Charlie",
+          "lastName": "Learner",
+          "email": "charlie.learner@example.com",
+          "password": "Password123!",
+          "phoneNumber": "+1-555-0002",
+          "role": "STUDENT",
+          "active": true,
+          "verified": true,
+          "createdAt": "2026-02-01T14:30:00",
+          "bookingsMade": 2,
+          "totalSpent": 800.00
+        },
+        {
+          "id": 3,
+          "firstName": "Emma",
+          "lastName": "Scholar",
+          "email": "emma.scholar@example.com",
+          "password": "Password123!",
+          "phoneNumber": "+1-555-0003",
+          "role": "STUDENT",
+          "active": true,
+          "verified": false,
+          "createdAt": "2026-04-28T09:00:00",
+          "bookingsMade": 0,
+          "totalSpent": 0
+        },
+        {
+          "id": 4,
+          "firstName": "Frank",
+          "lastName": "Inactive",
+          "email": "frank.inactive@example.com",
+          "password": "Password123!",
+          "phoneNumber": "+1-555-0004",
+          "role": "STUDENT",
+          "active": false,
+          "verified": true,
+          "createdAt": "2026-01-20T11:00:00",
+          "bookingsMade": 1,
+          "totalSpent": 300.00
+        }
+      ],
+      "tutors": [
+        {
+          "id": 10,
+          "firstName": "Bob",
+          "lastName": "Tutor",
+          "email": "tutor1@example.com",
+          "password": "Password123!",
+          "phoneNumber": "+1-555-1001",
+          "role": "TUTOR",
+          "active": true,
+          "verified": true,
+          "createdAt": "2026-01-10T08:00:00",
+          "profile": {
+            "bio": "Experienced Java developer with 8 years of teaching experience. I specialize in helping students understand complex programming concepts through practical examples.",
+            "subject": "Computer Science",
+            "subjects": ["Java", "Python", "Data Structures", "Algorithms"],
+            "hourlyRate": 500.00,
+            "yearsOfExperience": 8,
+            "averageRating": 4.8,
+            "totalSessions": 45,
+            "status": "APPROVED"
+          }
+        },
+        {
+          "id": 11,
+          "firstName": "Diana",
+          "lastName": "Educator",
+          "email": "diana.tutor@example.com",
+          "password": "Password123!",
+          "phoneNumber": "+1-555-1002",
+          "role": "TUTOR",
+          "active": true,
+          "verified": true,
+          "createdAt": "2026-02-05T13:00:00",
+          "profile": {
+            "bio": "Mathematics expert with a passion for making numbers fun and accessible. I teach from basic arithmetic to advanced calculus.",
+            "subject": "Mathematics",
+            "subjects": ["Algebra", "Calculus", "Geometry", "Statistics"],
+            "hourlyRate": 400.00,
+            "yearsOfExperience": 5,
+            "averageRating": 4.9,
+            "totalSessions": 32,
+            "status": "APPROVED"
+          }
+        },
+        {
+          "id": 12,
+          "firstName": "George",
+          "lastName": "Scientist",
+          "email": "george.science@example.com",
+          "password": "Password123!",
+          "phoneNumber": "+1-555-1003",
+          "role": "TUTOR",
+          "active": true,
+          "verified": true,
+          "createdAt": "2026-03-10T10:00:00",
+          "profile": {
+            "bio": "Physics and Chemistry tutor with laboratory research experience. I bring real-world applications to theoretical concepts.",
+            "subject": "Science",
+            "subjects": ["Physics", "Chemistry", "Biology"],
+            "hourlyRate": 450.00,
+            "yearsOfExperience": 6,
+            "averageRating": 4.6,
+            "totalSessions": 18,
+            "status": "APPROVED"
+          }
+        },
+        {
+          "id": 13,
+          "firstName": "Hannah",
+          "lastName": "Pending",
+          "email": "hannah.pending@example.com",
+          "password": "Password123!",
+          "phoneNumber": "+1-555-1004",
+          "role": "TUTOR",
+          "active": true,
+          "verified": false,
+          "createdAt": "2026-04-25T15:00:00",
+          "profile": {
+            "bio": "English literature enthusiast and creative writing coach. I help students express themselves clearly and confidently.",
+            "subject": "English",
+            "subjects": ["English Literature", "Creative Writing", "Grammar"],
+            "hourlyRate": 350.00,
+            "yearsOfExperience": 3,
+            "averageRating": 0.0,
+            "totalSessions": 0,
+            "status": "PENDING"
+          }
+        },
+        {
+          "id": 14,
+          "firstName": "Ian",
+          "lastName": "Rejected",
+          "email": "ian.rejected@example.com",
+          "password": "Password123!",
+          "phoneNumber": "+1-555-1005",
+          "role": "TUTOR",
+          "active": true,
+          "verified": false,
+          "createdAt": "2026-03-01T09:00:00",
+          "profile": {
+            "bio": "Former tutor application",
+            "subject": "History",
+            "subjects": ["World History", "Ancient Civilizations"],
+            "hourlyRate": 300.00,
+            "yearsOfExperience": 1,
+            "averageRating": 0.0,
+            "totalSessions": 0,
+            "status": "REJECTED"
+          }
+        },
+        {
+          "id": 15,
+          "firstName": "Julia",
+          "lastName": "Suspended",
+          "email": "julia.suspended@example.com",
+          "password": "Password123!",
+          "phoneNumber": "+1-555-1006",
+          "role": "TUTOR",
+          "active": false,
+          "verified": true,
+          "createdAt": "2026-01-20T11:00:00",
+          "profile": {
+            "bio": "Tutor currently under review",
+            "subject": "Music",
+            "subjects": ["Piano", "Music Theory"],
+            "hourlyRate": 600.00,
+            "yearsOfExperience": 10,
+            "averageRating": 3.2,
+            "totalSessions": 15,
+            "status": "SUSPENDED"
+          }
+        }
+      ],
+      "admins": [
+        {
+          "id": 100,
+          "firstName": "Super",
+          "lastName": "Admin",
+          "email": "admin@peertutoring.com",
+          "password": "AdminPass123!",
+          "phoneNumber": "+1-555-9999",
+          "role": "ADMIN",
+          "active": true,
+          "verified": true,
+          "createdAt": "2026-01-01T00:00:00",
+          "permissions": ["ALL"]
+        },
+        {
+          "id": 101,
+          "firstName": "Support",
+          "lastName": "Manager",
+          "email": "support@peer tutoring.com",
+          "password": "SupportPass123!",
+          "phoneNumber": "+1-555-9998",
+          "role": "ADMIN",
+          "active": true,
+          "verified": true,
+          "createdAt": "2026-01-05T10:00:00",
+          "permissions": ["VIEW_USERS", "MANAGE_TUTORS", "VIEW_PAYOUTS"]
+        }
+      ]
+    },
+    "sessions": {
+      "name": "Session Test Data",
+      "description": "Sample tutoring sessions with various statuses",
+      "availableSessions": [
+        {
+          "id": 1,
+          "tutorId": 10,
+          "tutorName": "Bob Tutor",
+          "title": "Java Programming Fundamentals",
+          "description": "Learn the basics of Java programming including variables, loops, conditionals, and object-oriented concepts.",
+          "subject": "Computer Science",
+          "startTime": "2026-05-05T10:00:00",
+          "endTime": "2026-05-05T11:30:00",
+          "price": 500.00,
+          "maxStudents": 1,
+          "enrolledStudents": 0,
+          "type": "ONE_ON_ONE",
+          "status": "AVAILABLE"
+        },
+        {
+          "id": 2,
+          "tutorId": 10,
+          "tutorName": "Bob Tutor",
+          "title": "Advanced Data Structures",
+          "description": "Deep dive into trees, graphs, hash tables, and advanced algorithms.",
+          "subject": "Computer Science",
+          "startTime": "2026-05-06T14:00:00",
+          "endTime": "2026-05-06T15:30:00",
+          "price": 600.00,
+          "maxStudents": 1,
+          "enrolledStudents": 0,
+          "type": "ONE_ON_ONE",
+          "status": "AVAILABLE"
+        },
+        {
+          "id": 3,
+          "tutorId": 11,
+          "tutorName": "Diana Educator",
+          "title": "Calculus I - Limits and Derivatives",
+          "description": "Introduction to differential calculus with plenty of practice problems.",
+          "subject": "Mathematics",
+          "startTime": "2026-05-05T16:00:00",
+          "endTime": "2026-05-05T17:30:00",
+          "price": 400.00,
+          "maxStudents": 1,
+          "enrolledStudents": 0,
+          "type": "ONE_ON_ONE",
+          "status": "AVAILABLE"
+        },
+        {
+          "id": 4,
+          "tutorId": 11,
+          "tutorName": "Diana Educator",
+          "title": "Group Study: Algebra Review",
+          "description": "Group session covering linear equations, quadratic formulas, and systems of equations.",
+          "subject": "Mathematics",
+          "startTime": "2026-05-07T10:00:00",
+          "endTime": "2026-05-07T11:30:00",
+          "price": 200.00,
+          "maxStudents": 5,
+          "enrolledStudents": 2,
+          "type": "GROUP",
+          "status": "AVAILABLE"
+        },
+        {
+          "id": 5,
+          "tutorId": 12,
+          "tutorName": "George Scientist",
+          "title": "Physics: Mechanics Basics",
+          "description": "Understanding Newton's laws, forces, and motion with interactive examples.",
+          "subject": "Science",
+          "startTime": "2026-05-08T09:00:00",
+          "endTime": "2026-05-08T10:30:00",
+          "price": 450.00,
+          "maxStudents": 1,
+          "enrolledStudents": 0,
+          "type": "ONE_ON_ONE",
+          "status": "AVAILABLE"
+        },
+        {
+          "id": 6,
+          "tutorId": 12,
+          "tutorName": "George Scientist",
+          "title": "Chemistry: Atomic Structure",
+          "description": "Learn about atoms, molecules, chemical bonds, and the periodic table.",
+          "subject": "Science",
+          "startTime": "2026-05-09T13:00:00",
+          "endTime": "2026-05-09T14:30:00",
+          "price": 450.00,
+          "maxStudents": 3,
+          "enrolledStudents": 1,
+          "type": "GROUP",
+          "status": "AVAILABLE"
+        }
+      ],
+      "bookedSessions": [
+        {
+          "id": 10,
+          "tutorId": 10,
+          "tutorName": "Bob Tutor",
+          "title": "Python for Beginners",
+          "description": "Introduction to Python programming language.",
+          "subject": "Computer Science",
+          "startTime": "2026-04-28T10:00:00",
+          "endTime": "2026-04-28T11:00:00",
+          "price": 450.00,
+          "maxStudents": 1,
+          "enrolledStudents": 1,
+          "type": "ONE_ON_ONE",
+          "status": "BOOKED",
+          "bookedBy": "Alice Student"
+        },
+        {
+          "id": 11,
+          "tutorId": 11,
+          "tutorName": "Diana Educator",
+          "title": "Statistics 101",
+          "description": "Basic statistical concepts and probability.",
+          "subject": "Mathematics",
+          "startTime": "2026-04-29T15:00:00",
+          "endTime": "2026-04-29T16:30:00",
+          "price": 400.00,
+          "maxStudents": 1,
+          "enrolledStudents": 1,
+          "type": "ONE_ON_ONE",
+          "status": "BOOKED",
+          "bookedBy": "Charlie Learner"
+        }
+      ],
+      "completedSessions": [
+        {
+          "id": 20,
+          "tutorId": 10,
+          "tutorName": "Bob Tutor",
+          "title": "Java OOP Concepts",
+          "description": "Object-oriented programming in Java.",
+          "subject": "Computer Science",
+          "startTime": "2026-04-15T10:00:00",
+          "endTime": "2026-04-15T11:00:00",
+          "price": 500.00,
+          "maxStudents": 1,
+          "enrolledStudents": 1,
+          "type": "ONE_ON_ONE",
+          "status": "COMPLETED",
+          "completedAt": "2026-04-15T11:00:00",
+          "rating": {
+            "rating": 5,
+            "review": "Excellent session! Bob explained complex concepts very clearly.",
+            "student": "Alice Student"
+          }
+        },
+        {
+          "id": 21,
+          "tutorId": 11,
+          "tutorName": "Diana Educator",
+          "title": "Geometry Fundamentals",
+          "description": "Basic geometric shapes and theorems.",
+          "subject": "Mathematics",
+          "startTime": "2026-04-10T14:00:00",
+          "endTime": "2026-04-10T15:00:00",
+          "price": 400.00,
+          "maxStudents": 1,
+          "enrolledStudents": 1,
+          "type": "ONE_ON_ONE",
+          "status": "COMPLETED",
+          "completedAt": "2026-04-10T15:00:00",
+          "rating": {
+            "rating": 4,
+            "review": "Good session, very patient instructor.",
+            "student": "Charlie Learner"
+          }
+        }
+      ],
+      "cancelledSessions": [
+        {
+          "id": 30,
+          "tutorId": 12,
+          "tutorName": "George Scientist",
+          "title": "Biology: Cell Structure",
+          "description": "Introduction to cell biology.",
+          "subject": "Science",
+          "startTime": "2026-04-20T09:00:00",
+          "endTime": "2026-04-20T10:00:00",
+          "price": 450.00,
+          "maxStudents": 1,
+          "enrolledStudents": 0,
+          "type": "ONE_ON_ONE",
+          "status": "CANCELLED",
+          "cancelledAt": "2026-04-19T12:00:00",
+          "cancellationReason": "Tutor unavailable due to emergency"
+        }
+      ],
+      "pastSessions": [
+        {
+          "id": 40,
+          "tutorId": 10,
+          "tutorName": "Bob Tutor",
+          "title": "Java Collections Framework",
+          "description": "Understanding Lists, Sets, and Maps in Java.",
+          "subject": "Computer Science",
+          "startTime": "2026-03-15T10:00:00",
+          "endTime": "2026-03-15T11:30:00",
+          "price": 550.00,
+          "maxStudents": 1,
+          "enrolledStudents": 1,
+          "type": "ONE_ON_ONE",
+          "status": "COMPLETED"
+        }
+      ]
+    },
+    "bookings": {
+      "name": "Booking Test Data",
+      "description": "Sample bookings with various statuses",
+      "pendingBookings": [
+        {
+          "id": 1,
+          "studentId": 1,
+          "studentName": "Alice Student",
+          "sessionId": 2,
+          "sessionTitle": "Advanced Data Structures",
+          "tutorId": 10,
+          "tutorName": "Bob Tutor",
+          "amount": 600.00,
+          "notes": "I'm preparing for a technical interview and need help with trees and graphs.",
+          "status": "PENDING",
+          "paymentStatus": "PENDING",
+          "createdAt": "2026-04-29T10:00:00"
+        },
+        {
+          "id": 2,
+          "studentId": 2,
+          "studentName": "Charlie Learner",
+          "sessionId": 5,
+          "sessionTitle": "Physics: Mechanics Basics",
+          "tutorId": 12,
+          "tutorName": "George Scientist",
+          "amount": 450.00,
+          "notes": "Need help understanding Newton's laws for my upcoming exam.",
+          "status": "PENDING",
+          "paymentStatus": "PENDING",
+          "createdAt": "2026-04-29T14:00:00"
+        }
+      ],
+      "confirmedBookings": [
+        {
+          "id": 10,
+          "studentId": 1,
+          "studentName": "Alice Student",
+          "sessionId": 10,
+          "sessionTitle": "Python for Beginners",
+          "tutorId": 10,
+          "tutorName": "Bob Tutor",
+          "amount": 450.00,
+          "notes": "Excited to learn Python!",
+          "status": "CONFIRMED",
+          "paymentStatus": "HELD",
+          "createdAt": "2026-04-25T09:00:00",
+          "confirmedAt": "2026-04-25T12:00:00"
+        },
+        {
+          "id": 11,
+          "studentId": 2,
+          "studentName": "Charlie Learner",
+          "sessionId": 11,
+          "sessionTitle": "Statistics 101",
+          "tutorId": 11,
+          "tutorName": "Diana Educator",
+          "amount": 400.00,
+          "notes": "Need statistics for my data science course.",
+          "status": "CONFIRMED",
+          "paymentStatus": "HELD",
+          "createdAt": "2026-04-26T10:00:00",
+          "confirmedAt": "2026-04-26T14:00:00"
+        }
+      ],
+      "completedBookings": [
+        {
+          "id": 20,
+          "studentId": 1,
+          "studentName": "Alice Student",
+          "sessionId": 20,
+          "sessionTitle": "Java OOP Concepts",
+          "tutorId": 10,
+          "tutorName": "Bob Tutor",
+          "amount": 500.00,
+          "notes": "Please focus on inheritance and polymorphism.",
+          "status": "COMPLETED",
+          "paymentStatus": "RELEASED_TO_TUTOR",
+          "createdAt": "2026-04-10T08:00:00",
+          "confirmedAt": "2026-04-10T10:00:00",
+          "completedAt": "2026-04-15T11:00:00",
+          "rating": {
+            "id": 1,
+            "rating": 5,
+            "review": "Excellent session! Bob explained complex concepts very clearly. Highly recommended!",
+            "createdAt": "2026-04-15T14:00:00"
+          }
+        },
+        {
+          "id": 21,
+          "studentId": 2,
+          "studentName": "Charlie Learner",
+          "sessionId": 21,
+          "sessionTitle": "Geometry Fundamentals",
+          "tutorId": 11,
+          "tutorName": "Diana Educator",
+          "amount": 400.00,
+          "notes": "Need help with triangles and circles.",
+          "status": "COMPLETED",
+          "paymentStatus": "RELEASED_TO_TUTOR",
+          "createdAt": "2026-04-05T09:00:00",
+          "confirmedAt": "2026-04-05T11:00:00",
+          "completedAt": "2026-04-10T15:00:00",
+          "rating": {
+            "id": 2,
+            "rating": 4,
+            "review": "Good session, Diana was very patient and explained everything well.",
+            "createdAt": "2026-04-10T18:00:00"
+          }
+        }
+      ],
+      "cancelledBookings": [
+        {
+          "id": 30,
+          "studentId": 1,
+          "studentName": "Alice Student",
+          "sessionId": 30,
+          "sessionTitle": "Biology: Cell Structure",
+          "tutorId": 12,
+          "tutorName": "George Scientist",
+          "amount": 450.00,
+          "notes": "Need this for my biology class.",
+          "status": "CANCELLED",
+          "paymentStatus": "REFUNDED",
+          "createdAt": "2026-04-18T10:00:00",
+          "confirmedAt": "2026-04-18T12:00:00",
+          "cancelledAt": "2026-04-19T12:00:00",
+          "cancellationReason": "Tutor had an emergency"
+        }
+      ],
+      "noShowBookings": [
+        {
+          "id": 40,
+          "studentId": 2,
+          "studentName": "Charlie Learner",
+          "sessionId": 40,
+          "sessionTitle": "Java Collections Framework",
+          "tutorId": 10,
+          "tutorName": "Bob Tutor",
+          "amount": 550.00,
+          "notes": "Want to understand ArrayList vs LinkedList.",
+          "status": "NO_SHOW",
+          "paymentStatus": "RELEASED_TO_TUTOR",
+          "createdAt": "2026-03-10T08:00:00",
+          "confirmedAt": "2026-03-10T10:00:00",
+          "completedAt": "2026-03-15T11:30:00",
+          "notesFromTutor": "Student did not show up for the session."
+        }
+      ]
+    },
+    "ratings": {
+      "name": "Rating Test Data",
+      "description": "Sample ratings and reviews",
+      "ratings": [
+        {
+          "id": 1,
+          "bookingId": 20,
+          "studentId": 1,
+          "studentName": "Alice Student",
+          "tutorId": 10,
+          "tutorName": "Bob Tutor",
+          "rating": 5,
+          "review": "Excellent session! Bob explained complex concepts very clearly. Highly recommended!",
+          "visible": true,
+          "createdAt": "2026-04-15T14:00:00"
+        },
+        {
+          "id": 2,
+          "bookingId": 21,
+          "studentId": 2,
+          "studentName": "Charlie Learner",
+          "tutorId": 11,
+          "tutorName": "Diana Educator",
+          "rating": 4,
+          "review": "Good session, Diana was very patient and explained everything well. Would book again.",
+          "visible": true,
+          "createdAt": "2026-04-10T18:00:00"
+        },
+        {
+          "id": 3,
+          "bookingId": 22,
+          "studentId": 1,
+          "studentName": "Alice Student",
+          "tutorId": 11,
+          "tutorName": "Diana Educator",
+          "rating": 5,
+          "review": "Diana is an amazing math tutor! Helped me ace my calculus exam.",
+          "visible": true,
+          "createdAt": "2026-03-20T16:00:00"
+        },
+        {
+          "id": 4,
+          "bookingId": 23,
+          "studentId": 2,
+          "studentName": "Charlie Learner",
+          "tutorId": 10,
+          "tutorName": "Bob Tutor",
+          "rating": 3,
+          "review": "Session was okay, but felt a bit rushed. Could have covered more examples.",
+          "visible": true,
+          "createdAt": "2026-03-15T12:00:00"
+        },
+        {
+          "id": 5,
+          "bookingId": 24,
+          "studentId": 1,
+          "studentName": "Alice Student",
+          "tutorId": 12,
+          "tutorName": "George Scientist",
+          "rating": 5,
+          "review": "George made physics so interesting! Great real-world examples.",
+          "visible": true,
+          "createdAt": "2026-03-01T15:00:00"
+        }
+      ]
+    },
+    "payouts": {
+      "name": "Payout Test Data",
+      "description": "Sample tutor payouts",
+      "pendingPayouts": [
+        {
+          "id": 1,
+          "tutorId": 10,
+          "tutorName": "Bob Tutor",
+          "amount": 2500.00,
+          "currency": "INR",
+          "status": "PENDING",
+          "paymentMethod": "Bank Transfer",
+          "notes": "Weekly payout for sessions completed",
+          "createdAt": "2026-04-29T00:00:00"
+        },
+        {
+          "id": 2,
+          "tutorId": 11,
+          "tutorName": "Diana Educator",
+          "amount": 1800.00,
+          "currency": "INR",
+          "status": "PENDING",
+          "paymentMethod": "UPI",
+          "notes": "Bi-weekly payout",
+          "createdAt": "2026-04-29T00:00:00"
+        }
+      ],
+      "processingPayouts": [
+        {
+          "id": 10,
+          "tutorId": 12,
+          "tutorName": "George Scientist",
+          "amount": 950.00,
+          "currency": "INR",
+          "status": "PROCESSING",
+          "paymentMethod": "Bank Transfer",
+          "notes": "Monthly payout",
+          "createdAt": "2026-04-28T00:00:00",
+          "processedBy": 100,
+          "processedByName": "Super Admin"
+        }
+      ],
+      "completedPayouts": [
+        {
+          "id": 20,
+          "tutorId": 10,
+          "tutorName": "Bob Tutor",
+          "amount": 3200.00,
+          "currency": "INR",
+          "status": "COMPLETED",
+          "paymentMethod": "Bank Transfer",
+          "transactionId": "TXN123456789",
+          "notes": "Weekly payout - April Week 3",
+          "createdAt": "2026-04-21T00:00:00",
+          "processedAt": "2026-04-22T10:00:00",
+          "processedBy": 100,
+          "processedByName": "Super Admin"
+        },
+        {
+          "id": 21,
+          "tutorId": 11,
+          "tutorName": "Diana Educator",
+          "amount": 2100.00,
+          "currency": "INR",
+          "status": "COMPLETED",
+          "paymentMethod": "UPI",
+          "transactionId": "UPI987654321",
+          "notes": "Bi-weekly payout - April 1-15",
+          "createdAt": "2026-04-15T00:00:00",
+          "processedAt": "2026-04-16T14:00:00",
+          "processedBy": 100,
+          "processedByName": "Super Admin"
+        }
+      ],
+      "failedPayouts": [
+        {
+          "id": 30,
+          "tutorId": 15,
+          "tutorName": "Julia Suspended",
+          "amount": 500.00,
+          "currency": "INR",
+          "status": "FAILED",
+          "paymentMethod": "Bank Transfer",
+          "notes": "Bank account details incorrect",
+          "createdAt": "2026-04-01T00:00:00",
+          "processedAt": "2026-04-02T09:00:00",
+          "processedBy": 100,
+          "processedByName": "Super Admin"
+        }
+      ]
+    },
+    "dashboardStats": {
+      "name": "Admin Dashboard Statistics",
+      "description": "Sample statistics for admin dashboard",
+      "overview": {
+        "totalUsers": 150,
+        "totalStudents": 100,
+        "totalTutors": 45,
+        "totalAdmins": 5,
+        "totalSessions": 250,
+        "totalBookings": 180,
+        "totalRevenue": 85000.00,
+        "pendingPayouts": 4300.00
+      },
+      "userGrowth": {
+        "labels": ["Jan", "Feb", "Mar", "Apr"],
+        "students": [20, 35, 55, 100],
+        "tutors": [5, 12, 25, 45]
+      },
+      "revenueData": {
+        "labels": ["Jan", "Feb", "Mar", "Apr"],
+        "revenue": [5000, 15000, 35000, 85000],
+        "payouts": [3000, 8000, 20000, 45000]
+      },
+      "subjectDistribution": [
+        { "subject": "Computer Science", "count": 80, "percentage": 32 },
+        { "subject": "Mathematics", "count": 65, "percentage": 26 },
+        { "subject": "Science", "count": 50, "percentage": 20 },
+        { "subject": "English", "count": 30, "percentage": 12 },
+        { "subject": "Others", "count": 25, "percentage": 10 }
+      ],
+      "recentActivity": [
+        {
+          "type": "NEW_REGISTRATION",
+          "user": "Emma Scholar",
+          "role": "STUDENT",
+          "timestamp": "2026-04-29T09:30:00",
+          "message": "New student registered"
+        },
+        {
+          "type": "BOOKING_CREATED",
+          "user": "Alice Student",
+          "tutor": "Bob Tutor",
+          "timestamp": "2026-04-29T10:00:00",
+          "message": "New booking created"
+        },
+        {
+          "type": "BOOKING_CONFIRMED",
+          "user": "Bob Tutor",
+          "student": "Alice Student",
+          "timestamp": "2026-04-28T14:00:00",
+          "message": "Booking confirmed"
+        },
+        {
+          "type": "SESSION_COMPLETED",
+          "user": "Diana Educator",
+          "student": "Charlie Learner",
+          "timestamp": "2026-04-28T16:30:00",
+          "message": "Session completed and rated"
+        },
+        {
+          "type": "PAYOUT_PROCESSED",
+          "tutor": "George Scientist",
+          "amount": 950.00,
+          "timestamp": "2026-04-28T10:00:00",
+          "message": "Payout processed"
+        }
+      ]
+    }
+  },
+  "pageScenarios": {
+    "homePage": {
+      "name": "Home Page Scenarios",
+      "url": "/",
+      "scenarios": [
+        {
+          "id": "HOME-001",
+          "name": "Landing Page - Logged Out",
+          "description": "View home page as a visitor",
+          "expectedElements": [
+            "Navbar with Login/Register links",
+            "Hero section with platform description",
+            "Featured tutors section",
+            "How it works section",
+            "Call-to-action buttons"
+          ],
+          "testData": null
+        },
+        {
+          "id": "HOME-002",
+          "name": "Landing Page - Logged In Student",
+          "description": "View home page as logged-in student",
+          "expectedElements": [
+            "Navbar with Dashboard link",
+            "Welcome message with user name",
+            "Recommended tutors based on interests",
+            "Upcoming sessions section"
+          ],
+          "testData": {
+            "user": "students[0]"
+          }
+        },
+        {
+          "id": "HOME-003",
+          "name": "Landing Page - Logged In Tutor",
+          "description": "View home page as logged-in tutor",
+          "expectedElements": [
+            "Navbar with Dashboard link",
+            "Welcome message",
+            "Quick stats (upcoming sessions, earnings)",
+            "Recent bookings section"
+          ],
+          "testData": {
+            "user": "tutors[0]"
+          }
+        }
+      ]
+    },
+    "loginPage": {
+      "name": "Login Page Scenarios",
+      "url": "/login",
+      "scenarios": [
+        {
+          "id": "LOGIN-001",
+          "name": "Valid Student Login",
+          "description": "Login with valid student credentials",
+          "steps": [
+            "Enter email: student1@example.com",
+            "Enter password: Password123!",
+            "Click Sign In"
+          ],
+          "expectedResult": "Redirect to dashboard with student role",
+          "testData": {
+            "email": "student1@example.com",
+            "password": "Password123!"
+          }
+        },
+        {
+          "id": "LOGIN-002",
+          "name": "Valid Tutor Login",
+          "description": "Login with valid tutor credentials",
+          "expectedResult": "Redirect to dashboard with tutor role",
+          "testData": {
+            "email": "tutor1@example.com",
+            "password": "Password123!"
+          }
+        },
+        {
+          "id": "LOGIN-003",
+          "name": "Invalid Password",
+          "description": "Login with wrong password",
+          "expectedResult": "Error message: Invalid credentials",
+          "testData": {
+            "email": "student1@example.com",
+            "password": "wrongpassword"
+          }
+        },
+        {
+          "id": "LOGIN-004",
+          "name": "Social Login - Google",
+          "description": "Login with Google OAuth",
+          "steps": [
+            "Click 'Sign in with Google' button",
+            "Complete Google OAuth flow"
+          ],
+          "expectedResult": "Redirect to dashboard with new/existing user"
+        },
+        {
+          "id": "LOGIN-005",
+          "name": "Social Login - GitHub",
+          "description": "Login with GitHub OAuth",
+          "steps": [
+            "Click 'Sign in with GitHub' button",
+            "Complete GitHub OAuth flow"
+          ],
+          "expectedResult": "Redirect to dashboard with new/existing user"
+        }
+      ]
+    },
+    "registerPage": {
+      "name": "Register Page Scenarios",
+      "url": "/register",
+      "scenarios": [
+        {
+          "id": "REGISTER-001",
+          "name": "Student Registration",
+          "description": "Register as a new student",
+          "steps": [
+            "Fill first name: Test",
+            "Fill last name: Student",
+            "Fill email: test.new@example.com",
+            "Fill password: TestPass123!",
+            "Fill phone: +1-555-9999",
+            "Select role: STUDENT",
+            "Accept terms",
+            "Click Create Account"
+          ],
+          "expectedResult": "Success message, redirect to login",
+          "testData": {
+            "firstName": "Test",
+            "lastName": "Student",
+            "email": "test.new@example.com",
+            "password": "TestPass123!",
+            "phoneNumber": "+1-555-9999",
+            "role": "STUDENT"
+          }
+        },
+        {
+          "id": "REGISTER-002",
+          "name": "Tutor Registration",
+          "description": "Register as a new tutor",
+          "expectedResult": "Success message, redirect to login, profile pending approval",
+          "testData": {
+            "firstName": "Test",
+            "lastName": "Tutor",
+            "email": "test.tutor@example.com",
+            "password": "TutorPass123!",
+            "phoneNumber": "+1-555-8888",
+            "role": "TUTOR"
+          }
+        },
+        {
+          "id": "REGISTER-003",
+          "name": "Duplicate Email",
+          "description": "Try to register with existing email",
+          "expectedResult": "Error: Email is already in use!"
+        },
+        {
+          "id": "REGISTER-004",
+          "name": "Missing Required Fields",
+          "description": "Submit form with empty fields",
+          "expectedResult": "Validation errors for required fields"
+        },
+        {
+          "id": "REGISTER-005",
+          "name": "Terms Not Accepted",
+          "description": "Try to register without accepting terms",
+          "expectedResult": "Error: Please accept the Terms of Service"
+        }
+      ]
+    },
+    "dashboardPage": {
+      "name": "Dashboard Page Scenarios",
+      "url": "/dashboard",
+      "requiresAuth": true,
+      "scenarios": [
+        {
+          "id": "DASHBOARD-001",
+          "name": "Student Dashboard",
+          "description": "View student dashboard",
+          "expectedElements": [
+            "Welcome message with student name",
+            "Upcoming sessions list",
+            "Booking history",
+            "Recommended tutors",
+            "Quick booking button"
+          ],
+          "testData": {
+            "user": "students[0]",
+            "upcomingBookings": ["bookings.confirmedBookings[0]"],
+            "pastBookings": ["bookings.completedBookings[0]"],
+            "recommendedTutors": ["tutors[0]", "tutors[1]"]
+          }
+        },
+        {
+          "id": "DASHBOARD-002",
+          "name": "Tutor Dashboard",
+          "description": "View tutor dashboard",
+          "expectedElements": [
+            "Welcome message with tutor name",
+            "Upcoming sessions to teach",
+            "Pending booking requests",
+            "Earnings summary",
+            "Average rating",
+            "Quick actions (create session, view profile)"
+          ],
+          "testData": {
+            "user": "tutors[0]",
+            "upcomingSessions": ["sessions.bookedSessions[0]"],
+            "pendingBookings": ["bookings.pendingBookings[0]"],
+            "earnings": 2500.00,
+            "rating": 4.8
+          }
+        },
+        {
+          "id": "DASHBOARD-003",
+          "name": "Admin Dashboard",
+          "description": "View admin dashboard",
+          "expectedElements": [
+            "Platform statistics",
+            "User management section",
+            "Pending tutor approvals",
+            "Recent payouts",
+            "System activity log"
+          ],
+          "testData": {
+            "user": "admins[0]",
+            "stats": "dashboardStats.overview",
+            "pendingTutors": ["tutors[3]"]
+          }
+        }
+      ]
+    },
+    "tutorsPage": {
+      "name": "Tutors Page Scenarios",
+      "url": "/tutors",
+      "scenarios": [
+        {
+          "id": "TUTORS-001",
+          "name": "View All Tutors",
+          "description": "Browse all approved tutors",
+          "expectedElements": [
+            "List of approved tutors",
+            "Tutor cards with photo, name, subjects, rating",
+            "Filter options",
+            "Search bar"
+          ],
+          "testData": {
+            "tutors": ["tutors[0]", "tutors[1]", "tutors[2]"]
+          }
+        },
+        {
+          "id": "TUTORS-002",
+          "name": "Search Tutors by Subject",
+          "description": "Filter tutors by subject",
+          "searchQuery": "Computer Science",
+          "expectedResult": "Show tutors teaching Computer Science",
+          "testData": {
+            "results": ["tutors[0]"]
+          }
+        },
+        {
+          "id": "TUTORS-003",
+          "name": "Filter by Rating",
+          "description": "Filter tutors by minimum rating",
+          "filter": "minRating=4.5",
+          "expectedResult": "Show tutors with rating >= 4.5",
+          "testData": {
+            "results": ["tutors[0]", "tutors[1]"]
+          }
+        },
+        {
+          "id": "TUTORS-004",
+          "name": "View Tutor Profile",
+          "description": "Click on a tutor to see details",
+          "expectedElements": [
+            "Tutor bio",
+            "Subjects taught",
+            "Hourly rate",
+            "Reviews from students",
+            "Available sessions",
+            "Book session button"
+          ],
+          "testData": {
+            "tutor": "tutors[0]",
+            "reviews": ["ratings.ratings[0]", "ratings.ratings[3]"]
+          }
+        }
+      ]
+    }
+  },
+  "apiEndpoints": {
+    "authentication": [
+      {
+        "method": "POST",
+        "path": "/api/auth/register",
+        "description": "Register a new user",
+        "requestBody": "SignupRequest",
+        "response": "MessageResponse"
+      },
+      {
+        "method": "POST",
+        "path": "/api/auth/login",
+        "description": "Authenticate user",
+        "requestBody": "LoginRequest",
+        "response": "JwtResponse"
+      },
+      {
+        "method": "GET",
+        "path": "/api/auth/me",
+        "description": "Get current user info",
+        "auth": true,
+        "response": "UserDetailsImpl"
+      },
+      {
+        "method": "GET",
+        "path": "/api/auth/oauth2/authorize/{provider}",
+        "description": "Initiate OAuth2 login (google/github)",
+        "response": "Redirect to OAuth provider"
+      },
+      {
+        "method": "GET",
+        "path": "/api/auth/oauth2/callback/{provider}",
+        "description": "OAuth2 callback endpoint",
+        "response": "Redirect to frontend with token"
+      }
+    ],
+    "sessions": [
+      {
+        "method": "GET",
+        "path": "/api/sessions",
+        "description": "Get all sessions",
+        "response": "List<Session>"
+      },
+      {
+        "method": "GET",
+        "path": "/api/sessions/available",
+        "description": "Get available sessions",
+        "response": "List<Session>"
+      },
+      {
+        "method": "GET",
+        "path": "/api/sessions/{id}",
+        "description": "Get session by ID",
+        "response": "Session"
+      },
+      {
+        "method": "POST",
+        "path": "/api/sessions",
+        "description": "Create new session (Tutor only)",
+        "auth": true,
+        "roles": ["TUTOR", "ADMIN"],
+        "requestBody": "SessionRequest",
+        "response": "Session"
+      },
+      {
+        "method": "PUT",
+        "path": "/api/sessions/{id}",
+        "description": "Update session (Tutor only)",
+        "auth": true,
+        "roles": ["TUTOR", "ADMIN"],
+        "requestBody": "SessionRequest",
+        "response": "Session"
+      },
+      {
+        "method": "DELETE",
+        "path": "/api/sessions/{id}",
+        "description": "Delete session (Tutor only)",
+        "auth": true,
+        "roles": ["TUTOR", "ADMIN"]
+      }
+    ],
+    "bookings": [
+      {
+        "method": "POST",
+        "path": "/api/student/bookings",
+        "description": "Create booking (Student only)",
+        "auth": true,
+        "roles": ["STUDENT", "ADMIN"],
+        "requestBody": "BookingRequest",
+        "response": "Booking"
+      },
+      {
+        "method": "GET",
+        "path": "/api/student/bookings",
+        "description": "Get student bookings",
+        "auth": true,
+        "roles": ["STUDENT", "ADMIN"],
+        "response": "List<Booking>"
+      },
+      {
+        "method": "GET",
+        "path": "/api/tutor/bookings",
+        "description": "Get tutor bookings",
+        "auth": true,
+        "roles": ["TUTOR", "ADMIN"],
+        "response": "List<Booking>"
+      },
+      {
+        "method": "POST",
+        "path": "/api/tutor/bookings/{id}/confirm",
+        "description": "Confirm booking (Tutor only)",
+        "auth": true,
+        "roles": ["TUTOR", "ADMIN"],
+        "response": "Booking"
+      },
+      {
+        "method": "POST",
+        "path": "/api/tutor/bookings/{id}/reject",
+        "description": "Reject booking (Tutor only)",
+        "auth": true,
+        "roles": ["TUTOR", "ADMIN"],
+        "response": "Booking"
+      },
+      {
+        "method": "POST",
+        "path": "/api/tutor/bookings/{id}/complete",
+        "description": "Mark booking complete (Tutor only)",
+        "auth": true,
+        "roles": ["TUTOR", "ADMIN"],
+        "response": "Booking"
+      }
+    ],
+    "tutors": [
+      {
+        "method": "GET",
+        "path": "/api/tutors",
+        "description": "Get all approved tutors",
+        "response": "List<TutorProfile>"
+      },
+      {
+        "method": "GET",
+        "path": "/api/tutors/{id}",
+        "description": "Get tutor by ID",
+        "response": "TutorProfile"
+      },
+      {
+        "method": "GET",
+        "path": "/api/tutors/search",
+        "description": "Search tutors",
+        "queryParams": ["subject", "minRating", "maxPrice"],
+        "response": "List<TutorProfile>"
+      },
+      {
+        "method": "POST",
+        "path": "/api/tutor/profile",
+        "description": "Create tutor profile",
+        "auth": true,
+        "roles": ["TUTOR", "ADMIN"],
+        "requestBody": "TutorProfileRequest",
+        "response": "TutorProfile"
+      },
+      {
+        "method": "PUT",
+        "path": "/api/tutor/profile",
+        "description": "Update tutor profile",
+        "auth": true,
+        "roles": ["TUTOR", "ADMIN"],
+        "requestBody": "TutorProfileRequest",
+        "response": "TutorProfile"
+      },
+      {
+        "method": "GET",
+        "path": "/api/tutors/{id}/ratings",
+        "description": "Get tutor ratings",
+        "response": "List<Rating>"
+      }
+    ],
+    "ratings": [
+      {
+        "method": "POST",
+        "path": "/api/student/ratings",
+        "description": "Create rating for completed session",
+        "auth": true,
+        "roles": ["STUDENT", "ADMIN"],
+        "requestBody": "RatingRequest",
+        "response": "Rating"
+      }
+    ],
+    "admin": [
+      {
+        "method": "GET",
+        "path": "/api/admin/dashboard",
+        "description": "Get dashboard stats",
+        "auth": true,
+        "roles": ["ADMIN"],
+        "response": "DashboardStats"
+      },
+      {
+        "method": "GET",
+        "path": "/api/admin/users",
+        "description": "Get all users",
+        "auth": true,
+        "roles": ["ADMIN"],
+        "response": "List<User>"
+      },
+      {
+        "method": "POST",
+        "path": "/api/admin/users/{id}/deactivate",
+        "description": "Deactivate user",
+        "auth": true,
+        "roles": ["ADMIN"],
+        "response": "User"
+      },
+      {
+        "method": "GET",
+        "path": "/api/admin/tutors/pending",
+        "description": "Get pending tutor applications",
+        "auth": true,
+        "roles": ["ADMIN"],
+        "response": "List<TutorProfile>"
+      },
+      {
+        "method": "POST",
+        "path": "/api/admin/tutors/{id}/approve",
+        "description": "Approve tutor",
+        "auth": true,
+        "roles": ["ADMIN"],
+        "response": "TutorProfile"
+      },
+      {
+        "method": "POST",
+        "path": "/api/admin/tutors/{id}/reject",
+        "description": "Reject tutor",
+        "auth": true,
+        "roles": ["ADMIN"],
+        "response": "TutorProfile"
+      },
+      {
+        "method": "GET",
+        "path": "/api/admin/payouts",
+        "description": "Get all payouts",
+        "auth": true,
+        "roles": ["ADMIN"],
+        "response": "List<Payout>"
+      },
+      {
+        "method": "POST",
+        "path": "/api/admin/payouts",
+        "description": "Create payout",
+        "auth": true,
+        "roles": ["ADMIN"],
+        "requestBody": "PayoutRequest",
+        "response": "Payout"
+      },
+      {
+        "method": "POST",
+        "path": "/api/admin/payouts/{id}/process",
+        "description": "Process payout",
+        "auth": true,
+        "roles": ["ADMIN"],
+        "response": "Payout"
+      }
+    ]
+  },
+  "sqlSeedData": {
+    "description": "SQL INSERT statements to populate database",
+    "users": [
+      "INSERT INTO users (email, password, first_name, last_name, phone_number, role, active, verified, created_at) VALUES ('student1@example.com', '$2a$10$EncryptedPassword', 'Alice', 'Student', '+1-555-0001', 'STUDENT', true, true, NOW());",
+      "INSERT INTO users (email, password, first_name, last_name, phone_number, role, active, verified, created_at) VALUES ('tutor1@example.com', '$2a$10$EncryptedPassword', 'Bob', 'Tutor', '+1-555-1001', 'TUTOR', true, true, NOW());",
+      "INSERT INTO users (email, password, first_name, last_name, phone_number, role, active, verified, created_at) VALUES ('admin@peertutoring.com', '$2a$10$EncryptedPassword', 'Super', 'Admin', '+1-555-9999', 'ADMIN', true, true, NOW());"
+    ],
+    "tutorProfiles": [
+      "INSERT INTO tutor_profiles (user_id, bio, subject, hourly_rate, years_of_experience, average_rating, total_sessions, status, created_at) VALUES (2, 'Experienced Java developer with 8 years of teaching experience.', 'Computer Science', 500.00, 8, 4.8, 45, 'APPROVED', NOW());"
+    ],
+    "sessions": [
+      "INSERT INTO sessions (tutor_id, title, description, subject, start_time, end_time, price, max_students, enrolled_students, type, status, created_at) VALUES (2, 'Java Programming Fundamentals', 'Learn the basics of Java programming', 'Computer Science', '2026-05-05 10:00:00', '2026-05-05 11:30:00', 500.00, 1, 0, 'ONE_ON_ONE', 'AVAILABLE', NOW());"
+    ]
+  },
+  "quickReference": {
+    "testCredentials": [
+      {
+        "role": "Student",
+        "email": "student1@example.com",
+        "password": "Password123!"
+      },
+      {
+        "role": "Tutor",
+        "email": "tutor1@example.com",
+        "password": "Password123!"
+      },
+      {
+        "role": "Admin",
+        "email": "admin@peertutoring.com",
+        "password": "AdminPass123!"
+      }
+    ],
+    "baseUrls": {
+      "backend": "http://localhost:8080",
+      "frontend": "http://localhost:3000"
+    },
+    "importantNotes": [
+      "All passwords shown are plaintext for testing; actual stored passwords are BCrypt encoded",
+      "OAuth2 users will have auto-generated passwords and will need to set a password on first login",
+      "Tutors with PENDING status cannot create sessions until approved",
+      "Payments are held in escrow until session completion",
+      "Ratings can only be submitted for COMPLETED bookings"
+    ]
+  }
+}
