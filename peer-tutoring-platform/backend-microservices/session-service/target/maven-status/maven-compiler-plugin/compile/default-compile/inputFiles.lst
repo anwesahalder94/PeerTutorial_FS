@@ -1,8 +1,0 @@
-/Users/subhodipanwesa/Documents/BITS_WILP/FullStack/Anwesa/PeerTutorial_FS/peer-tutoring-platform/backend-microservices/session-service/src/main/java/com/tutoring/sessionservice/config/SecurityConfig.java
-/Users/subhodipanwesa/Documents/BITS_WILP/FullStack/Anwesa/PeerTutorial_FS/peer-tutoring-platform/backend-microservices/session-service/src/main/java/com/tutoring/sessionservice/config/DataInitializer.java
-/Users/subhodipanwesa/Documents/BITS_WILP/FullStack/Anwesa/PeerTutorial_FS/peer-tutoring-platform/backend-microservices/session-service/src/main/java/com/tutoring/sessionservice/service/SessionManagementService.java
-/Users/subhodipanwesa/Documents/BITS_WILP/FullStack/Anwesa/PeerTutorial_FS/peer-tutoring-platform/backend-microservices/session-service/src/main/java/com/tutoring/sessionservice/model/Session.java
-/Users/subhodipanwesa/Documents/BITS_WILP/FullStack/Anwesa/PeerTutorial_FS/peer-tutoring-platform/backend-microservices/session-service/src/main/java/com/tutoring/sessionservice/controller/SessionController.java
-/Users/subhodipanwesa/Documents/BITS_WILP/FullStack/Anwesa/PeerTutorial_FS/peer-tutoring-platform/backend-microservices/session-service/src/main/java/com/tutoring/sessionservice/SessionServiceApplication.java
-/Users/subhodipanwesa/Documents/BITS_WILP/FullStack/Anwesa/PeerTutorial_FS/peer-tutoring-platform/backend-microservices/session-service/src/main/java/com/tutoring/sessionservice/repository/SessionRepository.java
-/Users/subhodipanwesa/Documents/BITS_WILP/FullStack/Anwesa/PeerTutorial_FS/peer-tutoring-platform/backend-microservices/session-service/src/main/java/com/tutoring/sessionservice/dto/SessionRequest.java

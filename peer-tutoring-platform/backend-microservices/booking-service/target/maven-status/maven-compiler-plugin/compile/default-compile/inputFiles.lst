@@ -1,8 +1,0 @@
-/Users/subhodipanwesa/Documents/BITS_WILP/FullStack/Anwesa/PeerTutorial_FS/peer-tutoring-platform/backend-microservices/booking-service/src/main/java/com/tutoring/bookingservice/config/SecurityConfig.java
-/Users/subhodipanwesa/Documents/BITS_WILP/FullStack/Anwesa/PeerTutorial_FS/peer-tutoring-platform/backend-microservices/booking-service/src/main/java/com/tutoring/bookingservice/client/SessionClient.java
-/Users/subhodipanwesa/Documents/BITS_WILP/FullStack/Anwesa/PeerTutorial_FS/peer-tutoring-platform/backend-microservices/booking-service/src/main/java/com/tutoring/bookingservice/model/Booking.java
-/Users/subhodipanwesa/Documents/BITS_WILP/FullStack/Anwesa/PeerTutorial_FS/peer-tutoring-platform/backend-microservices/booking-service/src/main/java/com/tutoring/bookingservice/dto/BookingRequest.java
-/Users/subhodipanwesa/Documents/BITS_WILP/FullStack/Anwesa/PeerTutorial_FS/peer-tutoring-platform/backend-microservices/booking-service/src/main/java/com/tutoring/bookingservice/controller/BookingController.java
-/Users/subhodipanwesa/Documents/BITS_WILP/FullStack/Anwesa/PeerTutorial_FS/peer-tutoring-platform/backend-microservices/booking-service/src/main/java/com/tutoring/bookingservice/service/BookingManagementService.java
-/Users/subhodipanwesa/Documents/BITS_WILP/FullStack/Anwesa/PeerTutorial_FS/peer-tutoring-platform/backend-microservices/booking-service/src/main/java/com/tutoring/bookingservice/repository/BookingRepository.java
-/Users/subhodipanwesa/Documents/BITS_WILP/FullStack/Anwesa/PeerTutorial_FS/peer-tutoring-platform/backend-microservices/booking-service/src/main/java/com/tutoring/bookingservice/BookingServiceApplication.java

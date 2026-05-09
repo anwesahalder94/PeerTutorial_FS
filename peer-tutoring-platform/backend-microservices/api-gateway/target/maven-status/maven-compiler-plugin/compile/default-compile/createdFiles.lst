@@ -1,6 +1,0 @@
-com/tutoring/gateway/config/GatewayConfig.class
-com/tutoring/gateway/config/SecurityConfig.class
-com/tutoring/gateway/filter/JwtAuthenticationFilter$Config.class
-com/tutoring/gateway/ApiGatewayApplication.class
-com/tutoring/gateway/filter/JwtAuthenticationFilter.class
-com/tutoring/gateway/filter/GlobalJwtFilter.class
