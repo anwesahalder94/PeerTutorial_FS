@@ -72,35 +72,32 @@ export const sessionService = {
 };
 
 export const bookingService = {
-  getStudentBookings: () => api.get('/student/bookings'),
-  getTutorBookings: () => api.get('/tutor/bookings'),
-  create: (data) => api.post('/student/bookings', data),
-  confirm: (bookingId) => api.post(`/tutor/bookings/${bookingId}/confirm`),
-  reject: (bookingId) => api.post(`/tutor/bookings/${bookingId}/reject`),
-  complete: (bookingId) => api.post(`/tutor/bookings/${bookingId}/complete`),
+  getStudentBookings: () => api.get('/bookings/my-bookings'),
+  getTutorBookings: () => api.get('/bookings/tutor-bookings'),
+  create: (data) => api.post('/bookings', data),
+  confirm: (bookingId) => api.post(`/bookings/${bookingId}/confirm`),
+  reject: (bookingId) => api.post(`/bookings/${bookingId}/reject`),
+  complete: (bookingId) => api.post(`/bookings/${bookingId}/complete`),
 };
 
 export const tutorService = {
   getAll: () => api.get('/tutors'),
   getById: (id) => api.get(`/tutors/${id}`),
   search: (params) => api.get('/tutors/search', { params }),
-  getProfile: () => api.get('/tutor/profile'),
-  createProfile: (data) => api.post('/tutor/profile', data),
-  updateProfile: (data) => api.put('/tutor/profile', data),
+  getProfile: () => api.get('/tutors/profile'),
+  createProfile: (data) => api.post('/tutors/profile', data),
+  updateProfile: (data) => api.put('/tutors/profile', data),
   getRatings: (tutorId) => api.get(`/tutors/${tutorId}/ratings`),
-  createRating: (data) => api.post('/student/ratings', data),
+  createRating: (data) => api.post('/tutors/ratings', data),
 };
 
 export const adminService = {
-  getDashboard: () => api.get('/admin/dashboard'),
-  getUsers: () => api.get('/admin/users'),
-  deactivateUser: (userId) => api.post(`/admin/users/${userId}/deactivate`),
   getPendingTutors: () => api.get('/admin/tutors/pending'),
   approveTutor: (profileId) => api.post(`/admin/tutors/${profileId}/approve`),
   rejectTutor: (profileId) => api.post(`/admin/tutors/${profileId}/reject`),
-  getPayouts: () => api.get('/admin/payouts'),
-  createPayout: (data) => api.post('/admin/payouts', data),
-  processPayout: (payoutId) => api.post(`/admin/payouts/${payoutId}/process`),
+  getPayouts: () => api.get('/admin/tutors/payouts'),
+  createPayout: (data) => api.post('/admin/tutors/payouts', data),
+  processPayout: (payoutId) => api.post(`/admin/tutors/payouts/${payoutId}/process`),
 };
 
 export default api;

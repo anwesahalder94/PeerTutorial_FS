@@ -1,0 +1,1475 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2026-05-08T23:22:39.934+05:30  INFO 31731 --- [session-service] [           main] c.t.s.SessionServiceApplication          : Starting SessionServiceApplication using Java 17.0.19 with PID 31731 (/Users/subhodipanwesa/Documents/BITS_WILP/FullStack/Anwesa/PeerTutorial_FS/peer-tutoring-platform/backend-microservices/session-service/target/classes started by subhodipanwesa in /Users/subhodipanwesa/Documents/BITS_WILP/FullStack/Anwesa/PeerTutorial_FS/peer-tutoring-platform/backend-microservices/session-service)
+2026-05-08T23:22:39.936+05:30  INFO 31731 --- [session-service] [           main] c.t.s.SessionServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-05-08T23:22:41.787+05:30  INFO 31731 --- [session-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-08T23:22:42.048+05:30  INFO 31731 --- [session-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 255 ms. Found 1 JPA repository interface.
+2026-05-08T23:22:42.460+05:30  INFO 31731 --- [session-service] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=1b7bf7c4-52c0-3e69-a073-fb9617946302
+2026-05-08T23:22:42.948+05:30  WARN 31731 --- [session-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$LoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$LoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2026-05-08T23:22:42.953+05:30  WARN 31731 --- [session-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.loadbalancer.config.BlockingLoadBalancerClientAutoConfiguration' of type [org.springframework.cloud.loadbalancer.config.BlockingLoadBalancerClientAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-05-08T23:22:42.956+05:30  WARN 31731 --- [session-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.loadbalancer.config.LoadBalancerAutoConfiguration' of type [org.springframework.cloud.loadbalancer.config.LoadBalancerAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-05-08T23:22:42.964+05:30  WARN 31731 --- [session-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.commons.config.CommonsConfigAutoConfiguration' of type [org.springframework.cloud.commons.config.CommonsConfigAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-05-08T23:22:42.971+05:30  WARN 31731 --- [session-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-05-08T23:22:42.972+05:30  WARN 31731 --- [session-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'loadBalancerClientsDefaultsMappingsProvider' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration$$Lambda$610/0x00000070014a4c80] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-05-08T23:22:42.975+05:30  WARN 31731 --- [session-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'defaultsBindHandlerAdvisor' of type [org.springframework.cloud.commons.config.DefaultsBindHandlerAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-05-08T23:22:42.983+05:30  WARN 31731 --- [session-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'spring.cloud.loadbalancer-org.springframework.cloud.client.loadbalancer.LoadBalancerClientsProperties' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerClientsProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-05-08T23:22:42.992+05:30  WARN 31731 --- [session-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'default.org.springframework.cloud.loadbalancer.config.LoadBalancerAutoConfiguration.LoadBalancerClientSpecification' of type [org.springframework.cloud.loadbalancer.annotation.LoadBalancerClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-05-08T23:22:42.997+05:30  WARN 31731 --- [session-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'default.org.springframework.cloud.loadbalancer.config.BlockingLoadBalancerClientAutoConfiguration.LoadBalancerClientSpecification' of type [org.springframework.cloud.loadbalancer.annotation.LoadBalancerClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-05-08T23:22:42.998+05:30  WARN 31731 --- [session-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'default.org.springframework.cloud.netflix.eureka.loadbalancer.LoadBalancerEurekaAutoConfiguration.LoadBalancerClientSpecification' of type [org.springframework.cloud.loadbalancer.annotation.LoadBalancerClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-05-08T23:22:42.999+05:30  WARN 31731 --- [session-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'loadBalancerClientFactory' of type [org.springframework.cloud.loadbalancer.support.LoadBalancerClientFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-05-08T23:22:43.010+05:30  WARN 31731 --- [session-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'blockingLoadBalancerClient' of type [org.springframework.cloud.loadbalancer.blocking.client.BlockingLoadBalancerClient] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-05-08T23:22:43.043+05:30  WARN 31731 --- [session-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'loadBalancerServiceInstanceCookieTransformer' of type [org.springframework.cloud.loadbalancer.core.LoadBalancerServiceInstanceCookieTransformer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-05-08T23:22:43.048+05:30  WARN 31731 --- [session-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'xForwarderHeadersTransformer' of type [org.springframework.cloud.loadbalancer.blocking.XForwardedHeadersTransformer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-05-08T23:22:43.050+05:30  WARN 31731 --- [session-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-05-08T23:22:43.055+05:30  WARN 31731 --- [session-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'loadBalancerRequestFactory' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerRequestFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-05-08T23:22:43.057+05:30  WARN 31731 --- [session-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'loadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-05-08T23:22:43.381+05:30  INFO 31731 --- [session-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8083 (http)
+2026-05-08T23:22:43.389+05:30  INFO 31731 --- [session-service] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-08T23:22:43.389+05:30  INFO 31731 --- [session-service] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2026-05-08T23:22:43.459+05:30  INFO 31731 --- [session-service] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-08T23:22:43.460+05:30  INFO 31731 --- [session-service] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3442 ms
+2026-05-08T23:22:43.635+05:30  INFO 31731 --- [session-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-08T23:22:43.930+05:30  INFO 31731 --- [session-service] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:session_service_db user=SA
+2026-05-08T23:22:43.932+05:30  INFO 31731 --- [session-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-08T23:22:43.944+05:30  INFO 31731 --- [session-service] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:session_service_db'
+2026-05-08T23:22:44.236+05:30  INFO 31731 --- [session-service] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-08T23:22:44.279+05:30  INFO 31731 --- [session-service] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2026-05-08T23:22:44.309+05:30  INFO 31731 --- [session-service] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-05-08T23:22:44.504+05:30  INFO 31731 --- [session-service] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-08T23:22:44.546+05:30  WARN 31731 --- [session-service] [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-08T23:22:45.332+05:30  INFO 31731 --- [session-service] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: 
+    drop table if exists sessions cascade 
+Hibernate: 
+    create table sessions (
+        enrolled_students integer not null,
+        max_students integer not null,
+        price numeric(38,2) not null,
+        created_at timestamp(6),
+        end_time timestamp(6) not null,
+        id bigint generated by default as identity,
+        start_time timestamp(6) not null,
+        tutor_id bigint not null,
+        updated_at timestamp(6),
+        description TEXT,
+        status varchar(255) not null check (status in ('AVAILABLE','BOOKED','CANCELLED','COMPLETED')),
+        subject varchar(255) not null,
+        title varchar(255) not null,
+        primary key (id)
+    )
+2026-05-08T23:22:45.383+05:30  INFO 31731 --- [session-service] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-08T23:22:46.026+05:30  WARN 31731 --- [session-service] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-08T23:22:46.073+05:30  WARN 31731 --- [session-service] [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: e259643a-fbd9-4161-aa5a-726735db732e
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-05-08T23:22:46.834+05:30  INFO 31731 --- [session-service] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoint(s) beneath base path '/actuator'
+2026-05-08T23:22:46.905+05:30  INFO 31731 --- [session-service] [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7ba38cce, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@28dae87e, org.springframework.security.web.context.SecurityContextHolderFilter@198eeb36, org.springframework.security.web.header.HeaderWriterFilter@28e12bc5, org.springframework.web.filter.CorsFilter@80f3111, org.springframework.security.web.authentication.logout.LogoutFilter@1e085e71, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6ddccee4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1a91d15f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@54e0b29c, org.springframework.security.web.access.ExceptionTranslationFilter@34f37ed4, org.springframework.security.web.access.intercept.AuthorizationFilter@57fd3b57]
+2026-05-08T23:22:47.618+05:30  INFO 31731 --- [session-service] [           main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2026-05-08T23:22:47.674+05:30  WARN 31731 --- [session-service] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-05-08T23:22:47.777+05:30  INFO 31731 --- [session-service] [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-05-08T23:22:47.898+05:30  INFO 31731 --- [session-service] [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-05-08T23:22:47.903+05:30  INFO 31731 --- [session-service] [           main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-08T23:22:47.930+05:30  INFO 31731 --- [session-service] [           main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-05-08T23:22:47.931+05:30  INFO 31731 --- [session-service] [           main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-05-08T23:22:47.931+05:30  INFO 31731 --- [session-service] [           main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-05-08T23:22:47.931+05:30  INFO 31731 --- [session-service] [           main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-05-08T23:22:47.931+05:30  INFO 31731 --- [session-service] [           main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-05-08T23:22:47.931+05:30  INFO 31731 --- [session-service] [           main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-05-08T23:22:47.932+05:30  INFO 31731 --- [session-service] [           main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-05-08T23:22:48.399+05:30  INFO 31731 --- [session-service] [           main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-05-08T23:22:48.403+05:30  INFO 31731 --- [session-service] [           main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-05-08T23:22:48.405+05:30  INFO 31731 --- [session-service] [           main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-05-08T23:22:48.410+05:30  INFO 31731 --- [session-service] [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1778262768409 with initial instances count: 4
+2026-05-08T23:22:48.420+05:30  INFO 31731 --- [session-service] [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application SESSION-SERVICE with eureka with status UP
+2026-05-08T23:22:48.420+05:30  INFO 31731 --- [session-service] [           main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1778262768420, current=UP, previous=STARTING]
+2026-05-08T23:22:48.424+05:30  INFO 31731 --- [session-service] [nfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SESSION-SERVICE/session-service:8083: registering service...
+2026-05-08T23:22:48.464+05:30  INFO 31731 --- [session-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8083 (http) with context path ''
+2026-05-08T23:22:48.465+05:30  INFO 31731 --- [session-service] [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8083
+2026-05-08T23:22:48.473+05:30  INFO 31731 --- [session-service] [nfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SESSION-SERVICE/session-service:8083 - registration status: 204
+2026-05-08T23:22:48.493+05:30  INFO 31731 --- [session-service] [           main] c.t.s.SessionServiceApplication          : Started SessionServiceApplication in 9.32 seconds (process running for 9.827)
+Hibernate: 
+    select
+        count(*) 
+    from
+        sessions s1_0
+Hibernate: 
+    insert 
+    into
+        sessions
+        (created_at, description, end_time, enrolled_students, max_students, price, start_time, status, subject, title, tutor_id, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        sessions
+        (created_at, description, end_time, enrolled_students, max_students, price, start_time, status, subject, title, tutor_id, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        sessions
+        (created_at, description, end_time, enrolled_students, max_students, price, start_time, status, subject, title, tutor_id, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        sessions
+        (created_at, description, end_time, enrolled_students, max_students, price, start_time, status, subject, title, tutor_id, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        sessions
+        (created_at, description, end_time, enrolled_students, max_students, price, start_time, status, subject, title, tutor_id, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        sessions
+        (created_at, description, end_time, enrolled_students, max_students, price, start_time, status, subject, title, tutor_id, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+✅ Created 6 sample sessions
+2026-05-08T23:25:32.706+05:30  INFO 31731 --- [session-service] [nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-08T23:25:32.706+05:30  INFO 31731 --- [session-service] [nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-08T23:25:32.708+05:30  INFO 31731 --- [session-service] [nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-05-08T23:25:32.723+05:30  WARN 31731 --- [session-service] [nio-8083-exec-1] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/api/sessions/available' (previous null). Performing CorsConfiguration lookup. This is logged once only at WARN level, and every time at TRACE.
+2026-05-08T23:25:32.728+05:30  WARN 31731 --- [session-service] [nio-8083-exec-1] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/api/sessions/available' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.status=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.status=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.tutor_id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.tutor_id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.id=?
+Hibernate: 
+    update
+        sessions 
+    set
+        created_at=?,
+        description=?,
+        end_time=?,
+        enrolled_students=?,
+        max_students=?,
+        price=?,
+        start_time=?,
+        status=?,
+        subject=?,
+        title=?,
+        tutor_id=?,
+        updated_at=? 
+    where
+        id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.tutor_id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.id=?
+Hibernate: 
+    update
+        sessions 
+    set
+        created_at=?,
+        description=?,
+        end_time=?,
+        enrolled_students=?,
+        max_students=?,
+        price=?,
+        start_time=?,
+        status=?,
+        subject=?,
+        title=?,
+        tutor_id=?,
+        updated_at=? 
+    where
+        id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.tutor_id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.id=?
+Hibernate: 
+    update
+        sessions 
+    set
+        created_at=?,
+        description=?,
+        end_time=?,
+        enrolled_students=?,
+        max_students=?,
+        price=?,
+        start_time=?,
+        status=?,
+        subject=?,
+        title=?,
+        tutor_id=?,
+        updated_at=? 
+    where
+        id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.tutor_id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.status=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.status=?
+2026-05-08T23:27:47.942+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.tutor_id=?
+2026-05-08T23:32:47.950+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.tutor_id=?
+Hibernate: 
+    insert 
+    into
+        sessions
+        (created_at, description, end_time, enrolled_students, max_students, price, start_time, status, subject, title, tutor_id, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.tutor_id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.status=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.status=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.status=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.tutor_id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.tutor_id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.status=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.status=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.tutor_id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.tutor_id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.id=?
+2026-05-08T23:37:47.960+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.status=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.tutor_id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.status=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.tutor_id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.status=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.tutor_id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.status=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.status=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.tutor_id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.tutor_id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.status=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.status=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.tutor_id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.tutor_id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.status=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.tutor_id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.status=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.status=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.tutor_id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.tutor_id=?
+2026-05-08T23:42:47.969+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-08T23:47:47.977+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-08T23:52:47.986+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.status=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.status=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.tutor_id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.tutor_id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.status=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.status=?
+2026-05-08T23:57:47.997+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T00:02:48.006+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T00:07:48.014+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T00:12:48.025+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T00:17:48.039+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T00:22:48.045+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T00:27:48.048+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T00:32:48.056+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T00:37:48.063+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.status=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.status=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.status=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.status=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.status=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.description,
+        s1_0.end_time,
+        s1_0.enrolled_students,
+        s1_0.max_students,
+        s1_0.price,
+        s1_0.start_time,
+        s1_0.status,
+        s1_0.subject,
+        s1_0.title,
+        s1_0.tutor_id,
+        s1_0.updated_at 
+    from
+        sessions s1_0 
+    where
+        s1_0.status=?
+2026-05-09T00:42:48.019+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T00:47:48.027+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T00:52:48.034+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T01:49:30.190+05:30  WARN 31731 --- [session-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=53m45s504ms).
+2026-05-09T03:29:01.553+05:30  WARN 31731 --- [session-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h39m31s364ms).
+2026-05-09T05:09:22.940+05:30  WARN 31731 --- [session-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h40m21s387ms).
+2026-05-09T06:26:46.333+05:30  WARN 31731 --- [session-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h17m23s393ms).
+2026-05-09T06:42:37.344+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T07:38:18.420+05:30  WARN 31731 --- [session-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h11m32s87ms).
+2026-05-09T08:48:06.276+05:30  WARN 31731 --- [session-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h9m47s856ms).
+2026-05-09T10:06:43.560+05:30  WARN 31731 --- [session-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h18m37s284ms).
+2026-05-09T10:31:50.986+05:30  WARN 31731 --- [session-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=25m7s425ms).
+2026-05-09T10:34:54.287+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T10:39:54.287+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T10:44:54.295+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T10:49:54.306+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T10:54:54.312+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T10:59:54.318+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T11:04:54.328+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T11:09:54.354+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T11:14:54.367+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T11:19:54.375+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T11:24:54.386+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T11:29:54.394+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T11:34:54.405+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T11:39:54.414+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T11:44:54.388+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T11:49:54.395+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T11:54:54.405+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T11:59:54.408+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T12:04:54.417+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T12:09:54.424+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T12:14:54.454+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T12:19:54.465+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T12:24:54.478+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T12:29:54.454+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T12:34:54.464+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T12:39:54.472+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T12:44:54.448+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T12:49:54.460+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T12:54:54.469+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T12:59:54.474+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T13:04:54.481+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T13:09:54.486+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T13:14:54.493+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T13:19:54.497+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T13:24:54.502+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T13:29:54.559+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T13:34:54.570+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T13:39:54.587+05:30  INFO 31731 --- [session-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
