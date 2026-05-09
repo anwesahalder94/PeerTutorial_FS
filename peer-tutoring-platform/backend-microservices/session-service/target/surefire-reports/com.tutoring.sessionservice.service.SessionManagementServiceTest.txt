@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.tutoring.sessionservice.service.SessionManagementServiceTest
+-------------------------------------------------------------------------------
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.242 s -- in com.tutoring.sessionservice.service.SessionManagementServiceTest

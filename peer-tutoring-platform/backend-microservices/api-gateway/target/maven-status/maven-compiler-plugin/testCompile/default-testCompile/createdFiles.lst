@@ -1,0 +1,3 @@
+com/tutoring/gateway/config/GatewayConfigTest.class
+com/tutoring/gateway/ApiGatewayApplicationTest.class
+com/tutoring/gateway/filter/JwtAuthenticationFilterTest.class
