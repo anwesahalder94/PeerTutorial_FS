@@ -16,6 +16,8 @@
 rad.json
 #Translation Base-file
 *.g.xlf
+#Log-files
+*.log
 #License-files
 *.bclicense
 *.flf
