@@ -88,14 +88,15 @@ const Tutors = () => {
       const response = await sessionService.getAvailable();
       const sessions = response.data;
 
-      // Group sessions by tutor
+      // Group sessions by tutorId (backend returns tutorId, not tutor object)
       const sessionsByTutor = {};
       sessions.forEach(session => {
-        if (session.tutor) {
-          if (!sessionsByTutor[session.tutor.id]) {
-            sessionsByTutor[session.tutor.id] = [];
+        const tutorId = session.tutorId;
+        if (tutorId) {
+          if (!sessionsByTutor[tutorId]) {
+            sessionsByTutor[tutorId] = [];
           }
-          sessionsByTutor[session.tutor.id].push(session);
+          sessionsByTutor[tutorId].push(session);
         }
       });
       setTutorSessions(sessionsByTutor);

@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { bookingService, sessionService } from '../services/api';
+import { bookingService, sessionService, tutorService } from '../services/api';
 import Dialog from './Dialog';
 
 const StudentDashboard = () => {
   const [bookings, setBookings] = useState([]);
   const [sessions, setSessions] = useState([]);
+  const [tutors, setTutors] = useState({});
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState('bookings');
 
@@ -34,11 +35,27 @@ const StudentDashboard = () => {
 
       const sessionsRes = await sessionService.getAvailable();
       setSessions(sessionsRes.data);
+
+      // Load tutor information for all sessions
+      const tutorsRes = await tutorService.getAll();
+      const tutorsMap = {};
+      tutorsRes.data.forEach(tutor => {
+        tutorsMap[tutor.userId] = tutor;
+      });
+      setTutors(tutorsMap);
     } catch (err) {
       console.error('Failed to load data', err);
     } finally {
       setLoading(false);
     }
+  };
+
+  const getTutorName = (tutorId) => {
+    const tutor = tutors[tutorId];
+    if (tutor) {
+      return `${tutor.user?.firstName || ''} ${tutor.user?.lastName || ''}`.trim() || 'Unknown Tutor';
+    }
+    return 'Loading...';
   };
 
   const handleBook = async (sessionId) => {
@@ -133,28 +150,32 @@ const StudentDashboard = () => {
             </div>
           ) : (
             <div className="bookings-grid">
-              {bookings.map((booking) => (
-                <div key={booking.id} className="booking-card-modern">
-                  <div className="booking-header">
-                    <h4>{booking.session?.title}</h4>
-                    {getStatusBadge(booking.status)}
+              {bookings.map((booking) => {
+                // Look up session info from sessions list
+                const session = sessions.find(s => s.id === booking.sessionId);
+                return (
+                  <div key={booking.id} className="booking-card-modern">
+                    <div className="booking-header">
+                      <h4>{session?.title || 'Session #' + booking.sessionId}</h4>
+                      {getStatusBadge(booking.status)}
+                    </div>
+                    <div className="booking-details">
+                      <div className="detail-item">
+                        <span className="detail-icon">👨‍🏫</span>
+                        <span>{getTutorName(session?.tutorId)}</span>
+                      </div>
+                      <div className="detail-item">
+                        <span className="detail-icon">📖</span>
+                        <span>{session?.subject || 'N/A'}</span>
+                      </div>
+                      <div className="detail-item">
+                        <span className="detail-icon">💰</span>
+                        <span className="price">${booking.amount}</span>
+                      </div>
+                    </div>
                   </div>
-                  <div className="booking-details">
-                    <div className="detail-item">
-                      <span className="detail-icon">👨‍🏫</span>
-                      <span>{booking.session?.tutor?.firstName} {booking.session?.tutor?.lastName}</span>
-                    </div>
-                    <div className="detail-item">
-                      <span className="detail-icon">📖</span>
-                      <span>{booking.session?.subject}</span>
-                    </div>
-                    <div className="detail-item">
-                      <span className="detail-icon">💰</span>
-                      <span className="price">${booking.amount}</span>
-                    </div>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           )}
         </div>
@@ -179,10 +200,12 @@ const StudentDashboard = () => {
                     <span className="session-price">${session.price}</span>
                   </div>
                   <h4>{session.title}</h4>
+                  <p className="tutor-name">👨‍🏫 {getTutorName(session.tutorId)}</p>
                   <p className="session-description">{session.description?.substring(0, 100)}...</p>
                   <div className="session-meta-modern">
                     <span>📅 {new Date(session.startTime).toLocaleDateString()}</span>
-                    <span>👥 {session.type}</span>
+                    <span>👥 {session.enrolledStudents || 0}/{session.maxStudents} students</span>
+                    <span>⏱️ {Math.round((new Date(session.endTime) - new Date(session.startTime)) / (1000 * 60))} min</span>
                   </div>
                   <button
                     className="book-btn"
@@ -429,6 +452,13 @@ const StudentDashboard = () => {
           font-size: 0.9rem;
           margin-bottom: 1rem;
           flex-grow: 1;
+        }
+
+        .tutor-name {
+          color: var(--primary);
+          font-size: 0.9rem;
+          font-weight: 500;
+          margin-bottom: 0.5rem;
         }
 
         .session-meta-modern {

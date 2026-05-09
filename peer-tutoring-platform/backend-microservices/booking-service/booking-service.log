@@ -1,0 +1,1159 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2026-05-08T22:45:55.098+05:30  INFO 17817 --- [booking-service] [           main] c.t.b.BookingServiceApplication          : Starting BookingServiceApplication v1.0.0 using Java 25.0.2 with PID 17817 (/Users/subhodipanwesa/Documents/BITS_WILP/FullStack/Anwesa/PeerTutorial_FS/peer-tutoring-platform/backend-microservices/booking-service/target/booking-service-1.0.0.jar started by subhodipanwesa in /Users/subhodipanwesa/Documents/BITS_WILP/FullStack/Anwesa/PeerTutorial_FS/peer-tutoring-platform/backend-microservices/booking-service)
+2026-05-08T22:45:55.101+05:30  INFO 17817 --- [booking-service] [           main] c.t.b.BookingServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-05-08T22:45:57.059+05:30  INFO 17817 --- [booking-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-08T22:45:57.262+05:30  INFO 17817 --- [booking-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 190 ms. Found 1 JPA repository interface.
+2026-05-08T22:45:57.733+05:30  INFO 17817 --- [booking-service] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=cb2eb39d-cd81-3334-aab7-15c326256223
+2026-05-08T22:45:58.273+05:30  WARN 17817 --- [booking-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$LoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$LoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2026-05-08T22:45:58.280+05:30  WARN 17817 --- [booking-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.loadbalancer.config.BlockingLoadBalancerClientAutoConfiguration' of type [org.springframework.cloud.loadbalancer.config.BlockingLoadBalancerClientAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-05-08T22:45:58.287+05:30  WARN 17817 --- [booking-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.loadbalancer.config.LoadBalancerAutoConfiguration' of type [org.springframework.cloud.loadbalancer.config.LoadBalancerAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-05-08T22:45:58.306+05:30  WARN 17817 --- [booking-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.commons.config.CommonsConfigAutoConfiguration' of type [org.springframework.cloud.commons.config.CommonsConfigAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-05-08T22:45:58.314+05:30  WARN 17817 --- [booking-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-05-08T22:45:58.316+05:30  WARN 17817 --- [booking-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'loadBalancerClientsDefaultsMappingsProvider' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration$$Lambda/0x00000380014a5d38] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-05-08T22:45:58.321+05:30  WARN 17817 --- [booking-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'defaultsBindHandlerAdvisor' of type [org.springframework.cloud.commons.config.DefaultsBindHandlerAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-05-08T22:45:58.330+05:30  WARN 17817 --- [booking-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'spring.cloud.loadbalancer-org.springframework.cloud.client.loadbalancer.LoadBalancerClientsProperties' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerClientsProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-05-08T22:45:58.342+05:30  WARN 17817 --- [booking-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'default.org.springframework.cloud.loadbalancer.config.LoadBalancerAutoConfiguration.LoadBalancerClientSpecification' of type [org.springframework.cloud.loadbalancer.annotation.LoadBalancerClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-05-08T22:45:58.347+05:30  WARN 17817 --- [booking-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'default.org.springframework.cloud.loadbalancer.config.BlockingLoadBalancerClientAutoConfiguration.LoadBalancerClientSpecification' of type [org.springframework.cloud.loadbalancer.annotation.LoadBalancerClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-05-08T22:45:58.347+05:30  WARN 17817 --- [booking-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'default.org.springframework.cloud.netflix.eureka.loadbalancer.LoadBalancerEurekaAutoConfiguration.LoadBalancerClientSpecification' of type [org.springframework.cloud.loadbalancer.annotation.LoadBalancerClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-05-08T22:45:58.349+05:30  WARN 17817 --- [booking-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'loadBalancerClientFactory' of type [org.springframework.cloud.loadbalancer.support.LoadBalancerClientFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-05-08T22:45:58.364+05:30  WARN 17817 --- [booking-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'blockingLoadBalancerClient' of type [org.springframework.cloud.loadbalancer.blocking.client.BlockingLoadBalancerClient] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-05-08T22:45:58.383+05:30  WARN 17817 --- [booking-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'loadBalancerServiceInstanceCookieTransformer' of type [org.springframework.cloud.loadbalancer.core.LoadBalancerServiceInstanceCookieTransformer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-05-08T22:45:58.387+05:30  WARN 17817 --- [booking-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'xForwarderHeadersTransformer' of type [org.springframework.cloud.loadbalancer.blocking.XForwardedHeadersTransformer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-05-08T22:45:58.390+05:30  WARN 17817 --- [booking-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-05-08T22:45:58.397+05:30  WARN 17817 --- [booking-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'loadBalancerRequestFactory' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerRequestFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-05-08T22:45:58.402+05:30  WARN 17817 --- [booking-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'loadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by org.apache.tomcat.jni.Library in an unnamed module (jar:nested:/Users/subhodipanwesa/Documents/BITS_WILP/FullStack/Anwesa/PeerTutorial_FS/peer-tutoring-platform/backend-microservices/booking-service/target/booking-service-1.0.0.jar/!BOOT-INF/lib/tomcat-embed-core-10.1.16.jar!/)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+2026-05-08T22:45:58.821+05:30  INFO 17817 --- [booking-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8084 (http)
+2026-05-08T22:45:58.832+05:30  INFO 17817 --- [booking-service] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-08T22:45:58.832+05:30  INFO 17817 --- [booking-service] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2026-05-08T22:45:58.882+05:30  INFO 17817 --- [booking-service] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-08T22:45:58.883+05:30  INFO 17817 --- [booking-service] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3644 ms
+2026-05-08T22:45:59.167+05:30  INFO 17817 --- [booking-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-08T22:45:59.545+05:30  INFO 17817 --- [booking-service] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:booking_service_db user=SA
+2026-05-08T22:45:59.548+05:30  INFO 17817 --- [booking-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-08T22:45:59.561+05:30  INFO 17817 --- [booking-service] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:booking_service_db'
+2026-05-08T22:46:00.023+05:30  INFO 17817 --- [booking-service] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-08T22:46:00.169+05:30  INFO 17817 --- [booking-service] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2026-05-08T22:46:00.232+05:30  INFO 17817 --- [booking-service] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-05-08T22:46:00.564+05:30  INFO 17817 --- [booking-service] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-08T22:46:00.633+05:30  WARN 17817 --- [booking-service] [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-08T22:46:01.700+05:30  INFO 17817 --- [booking-service] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: 
+    drop table if exists bookings cascade 
+Hibernate: 
+    create table bookings (
+        amount numeric(38,2) not null,
+        cancelled_at timestamp(6),
+        completed_at timestamp(6),
+        confirmed_at timestamp(6),
+        created_at timestamp(6),
+        id bigint generated by default as identity,
+        session_id bigint not null,
+        student_id bigint not null,
+        updated_at timestamp(6),
+        notes TEXT,
+        payment_status varchar(255) not null check (payment_status in ('PENDING','HELD','RELEASED_TO_TUTOR','REFUNDED')),
+        status varchar(255) not null check (status in ('PENDING','CONFIRMED','CANCELLED','COMPLETED','NO_SHOW')),
+        primary key (id)
+    )
+2026-05-08T22:46:01.756+05:30  INFO 17817 --- [booking-service] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-08T22:46:02.691+05:30  WARN 17817 --- [booking-service] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-08T22:46:02.912+05:30  WARN 17817 --- [booking-service] [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 6fe197bc-d6dd-4e2c-be82-3e9782dd77c8
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-05-08T22:46:03.737+05:30  INFO 17817 --- [booking-service] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoint(s) beneath base path '/actuator'
+2026-05-08T22:46:03.818+05:30  INFO 17817 --- [booking-service] [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3c51dec5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@51a42767, org.springframework.security.web.context.SecurityContextHolderFilter@bf70ce5, org.springframework.security.web.header.HeaderWriterFilter@7e7d6175, org.springframework.web.filter.CorsFilter@40e420fe, org.springframework.security.web.authentication.logout.LogoutFilter@5c14c284, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@319c77de, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@23c3f787, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7eaa52d6, org.springframework.security.web.access.ExceptionTranslationFilter@15b54cb7, org.springframework.security.web.access.intercept.AuthorizationFilter@613bebb9]
+2026-05-08T22:46:04.657+05:30  INFO 17817 --- [booking-service] [           main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2026-05-08T22:46:04.739+05:30  WARN 17817 --- [booking-service] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-05-08T22:46:04.858+05:30  INFO 17817 --- [booking-service] [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-05-08T22:46:05.018+05:30  INFO 17817 --- [booking-service] [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-05-08T22:46:05.025+05:30  INFO 17817 --- [booking-service] [           main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-08T22:46:05.059+05:30  INFO 17817 --- [booking-service] [           main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-05-08T22:46:05.060+05:30  INFO 17817 --- [booking-service] [           main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-05-08T22:46:05.060+05:30  INFO 17817 --- [booking-service] [           main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-05-08T22:46:05.060+05:30  INFO 17817 --- [booking-service] [           main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-05-08T22:46:05.060+05:30  INFO 17817 --- [booking-service] [           main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-05-08T22:46:05.060+05:30  INFO 17817 --- [booking-service] [           main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-05-08T22:46:05.061+05:30  INFO 17817 --- [booking-service] [           main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-05-08T22:46:05.600+05:30  INFO 17817 --- [booking-service] [           main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-05-08T22:46:05.608+05:30  INFO 17817 --- [booking-service] [           main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-05-08T22:46:05.613+05:30  INFO 17817 --- [booking-service] [           main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-05-08T22:46:05.618+05:30  INFO 17817 --- [booking-service] [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1778260565617 with initial instances count: 5
+2026-05-08T22:46:05.631+05:30  INFO 17817 --- [booking-service] [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application BOOKING-SERVICE with eureka with status UP
+2026-05-08T22:46:05.631+05:30  INFO 17817 --- [booking-service] [           main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1778260565631, current=UP, previous=STARTING]
+2026-05-08T22:46:05.633+05:30  INFO 17817 --- [booking-service] [nfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BOOKING-SERVICE/booking-service:8084: registering service...
+2026-05-08T22:46:05.679+05:30  INFO 17817 --- [booking-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8084 (http) with context path ''
+2026-05-08T22:46:05.680+05:30  INFO 17817 --- [booking-service] [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8084
+2026-05-08T22:46:05.707+05:30  INFO 17817 --- [booking-service] [nfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BOOKING-SERVICE/booking-service:8084 - registration status: 204
+2026-05-08T22:46:05.729+05:30  INFO 17817 --- [booking-service] [           main] c.t.b.BookingServiceApplication          : Started BookingServiceApplication in 11.378 seconds (process running for 12.143)
+2026-05-08T22:46:09.617+05:30  INFO 17817 --- [booking-service] [nio-8084-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-08T22:46:09.617+05:30  INFO 17817 --- [booking-service] [nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-08T22:46:09.619+05:30  INFO 17817 --- [booking-service] [nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-05-08T22:46:09.645+05:30  WARN 17817 --- [booking-service] [nio-8084-exec-1] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/actuator/health' (previous null). Performing CorsConfiguration lookup. This is logged once only at WARN level, and every time at TRACE.
+2026-05-08T22:46:09.653+05:30  WARN 17817 --- [booking-service] [nio-8084-exec-1] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/actuator/health' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.session_id in (?, ?, ?)
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.student_id=?
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.session_id in (?, ?, ?)
+2026-05-08T22:51:05.071+05:30  INFO 17817 --- [booking-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.student_id=?
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.session_id in (?, ?, ?, ?)
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.session_id in (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.session_id in (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.session_id in (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.session_id in (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.session_id in (?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.session_id in (?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.session_id in (?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.student_id=?
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.student_id=?
+Hibernate: 
+    insert 
+    into
+        bookings
+        (amount, cancelled_at, completed_at, confirmed_at, created_at, notes, payment_status, session_id, status, student_id, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.student_id=?
+Hibernate: 
+    insert 
+    into
+        bookings
+        (amount, cancelled_at, completed_at, confirmed_at, created_at, notes, payment_status, session_id, status, student_id, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.student_id=?
+2026-05-08T22:56:05.088+05:30  INFO 17817 --- [booking-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.session_id in (?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.session_id in (?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.session_id in (?, ?, ?, ?, ?, ?, ?, ?)
+2026-05-08T23:01:05.098+05:30  INFO 17817 --- [booking-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.session_id in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.session_id in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.student_id=?
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.student_id=?
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.session_id in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.session_id in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.student_id=?
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.student_id=?
+2026-05-08T23:06:05.090+05:30  INFO 17817 --- [booking-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+Hibernate: 
+    insert 
+    into
+        bookings
+        (amount, cancelled_at, completed_at, confirmed_at, created_at, notes, payment_status, session_id, status, student_id, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.student_id=?
+Hibernate: 
+    insert 
+    into
+        bookings
+        (amount, cancelled_at, completed_at, confirmed_at, created_at, notes, payment_status, session_id, status, student_id, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.student_id=?
+Hibernate: 
+    insert 
+    into
+        bookings
+        (amount, cancelled_at, completed_at, confirmed_at, created_at, notes, payment_status, session_id, status, student_id, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.student_id=?
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.student_id=?
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.student_id=?
+2026-05-08T23:11:05.097+05:30  INFO 17817 --- [booking-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.student_id=?
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.student_id=?
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.student_id=?
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.student_id=?
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.student_id=?
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.student_id=?
+2026-05-08T23:16:05.105+05:30  INFO 17817 --- [booking-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-08T23:21:05.111+05:30  INFO 17817 --- [booking-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-08T23:23:06.477+05:30  INFO 17817 --- [booking-service] [tbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BOOKING-SERVICE/booking-service:8084 - Re-registering apps/BOOKING-SERVICE
+2026-05-08T23:23:06.478+05:30  INFO 17817 --- [booking-service] [tbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BOOKING-SERVICE/booking-service:8084: registering service...
+2026-05-08T23:23:06.484+05:30  INFO 17817 --- [booking-service] [tbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BOOKING-SERVICE/booking-service:8084 - registration status: 204
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.session_id in (?, ?)
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.session_id in (?, ?)
+2026-05-08T23:26:05.116+05:30  INFO 17817 --- [booking-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.id=?
+Hibernate: 
+    update
+        bookings 
+    set
+        amount=?,
+        cancelled_at=?,
+        completed_at=?,
+        confirmed_at=?,
+        created_at=?,
+        notes=?,
+        payment_status=?,
+        session_id=?,
+        status=?,
+        student_id=?,
+        updated_at=? 
+    where
+        id=?
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.session_id in (?, ?)
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.id=?
+Hibernate: 
+    update
+        bookings 
+    set
+        amount=?,
+        cancelled_at=?,
+        completed_at=?,
+        confirmed_at=?,
+        created_at=?,
+        notes=?,
+        payment_status=?,
+        session_id=?,
+        status=?,
+        student_id=?,
+        updated_at=? 
+    where
+        id=?
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.session_id in (?, ?)
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.id=?
+Hibernate: 
+    update
+        bookings 
+    set
+        amount=?,
+        cancelled_at=?,
+        completed_at=?,
+        confirmed_at=?,
+        created_at=?,
+        notes=?,
+        payment_status=?,
+        session_id=?,
+        status=?,
+        student_id=?,
+        updated_at=? 
+    where
+        id=?
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.session_id in (?, ?)
+2026-05-08T23:31:05.126+05:30  INFO 17817 --- [booking-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+Hibernate: 
+    insert 
+    into
+        bookings
+        (amount, cancelled_at, completed_at, confirmed_at, created_at, notes, payment_status, session_id, status, student_id, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.student_id=?
+2026-05-08T23:36:05.139+05:30  INFO 17817 --- [booking-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.student_id=?
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.student_id=?
+Hibernate: 
+    insert 
+    into
+        bookings
+        (amount, cancelled_at, completed_at, confirmed_at, created_at, notes, payment_status, session_id, status, student_id, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        bookings
+        (amount, cancelled_at, completed_at, confirmed_at, created_at, notes, payment_status, session_id, status, student_id, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        bookings
+        (amount, cancelled_at, completed_at, confirmed_at, created_at, notes, payment_status, session_id, status, student_id, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2026-05-08T23:41:05.147+05:30  INFO 17817 --- [booking-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-08T23:46:05.155+05:30  INFO 17817 --- [booking-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-08T23:51:05.165+05:30  INFO 17817 --- [booking-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-08T23:56:05.175+05:30  INFO 17817 --- [booking-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.student_id=?
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.cancelled_at,
+        b1_0.completed_at,
+        b1_0.confirmed_at,
+        b1_0.created_at,
+        b1_0.notes,
+        b1_0.payment_status,
+        b1_0.session_id,
+        b1_0.status,
+        b1_0.student_id,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.student_id=?
+2026-05-09T00:01:05.186+05:30  INFO 17817 --- [booking-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-09T00:06:05.191+05:30  INFO 17817 --- [booking-service] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration

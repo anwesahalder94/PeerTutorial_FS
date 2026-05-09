@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { sessionService, bookingService } from '../services/api';
+import { sessionService, bookingService, tutorService } from '../services/api';
 import { useAuth } from '../context/AuthContext';
 import Dialog from '../components/Dialog';
 
 const Home = () => {
   const [sessions, setSessions] = useState([]);
+  const [tutors, setTutors] = useState({});
   const [loading, setLoading] = useState(true);
   const [bookingLoading, setBookingLoading] = useState(null);
   const { user } = useAuth();
@@ -33,18 +34,34 @@ const Home = () => {
   });
 
   useEffect(() => {
-    loadSessions();
+    loadData();
   }, []);
 
-  const loadSessions = async () => {
+  const loadData = async () => {
     try {
       const response = await sessionService.getAvailable();
       setSessions(response.data.slice(0, 6)); // Show only first 6 sessions
+
+      // Load tutor information
+      const tutorsRes = await tutorService.getAll();
+      const tutorsMap = {};
+      tutorsRes.data.forEach(tutor => {
+        tutorsMap[tutor.userId] = tutor;
+      });
+      setTutors(tutorsMap);
     } catch (err) {
-      console.error('Failed to load sessions', err);
+      console.error('Failed to load data', err);
     } finally {
       setLoading(false);
     }
+  };
+
+  const getTutorName = (tutorId) => {
+    const tutor = tutors[tutorId];
+    if (tutor) {
+      return `${tutor.user?.firstName || ''} ${tutor.user?.lastName || ''}`.trim() || 'Expert Tutor';
+    }
+    return 'Expert Tutor';
   };
 
   const handleBookSession = async (sessionId) => {
@@ -73,7 +90,7 @@ const Home = () => {
         `Your booking request has been sent! Status: ${response.data.status}`,
         'success'
       );
-      loadSessions(); // Refresh the sessions
+      loadData(); // Refresh the sessions
     } catch (err) {
       console.error('Booking error:', err);
       const errorMessage = err.response?.data?.message || 'Failed to book session. Please try again.';
@@ -205,6 +222,7 @@ const Home = () => {
                     <span className="session-price">${session.price}</span>
                   </div>
                   <h3>{session.title}</h3>
+                  <p className="tutor-name">👨‍🏫 {getTutorName(session.tutorId)}</p>
                   <p>{session.description?.substring(0, 100)}...</p>
                   <div className="session-meta">
                     <span className="meta-item">
@@ -213,11 +231,11 @@ const Home = () => {
                     </span>
                     <span className="meta-item">
                       <span className="meta-icon">👥</span>
-                      {session.type}
+                      {session.enrolledStudents || 0}/{session.maxStudents} students
                     </span>
                     <span className="meta-item">
                       <span className="meta-icon">⏱️</span>
-                      {session.duration || 60} min
+                      {Math.round((new Date(session.endTime) - new Date(session.startTime)) / (1000 * 60))} min
                     </span>
                   </div>
                   <button
@@ -421,6 +439,13 @@ const Home = () => {
           justify-content: space-between;
           align-items: center;
           margin-bottom: var(--spacing-sm);
+        }
+
+        .tutor-name {
+          color: var(--primary);
+          font-size: 0.9rem;
+          font-weight: 500;
+          margin-bottom: 0.5rem;
         }
 
         .session-subject {
